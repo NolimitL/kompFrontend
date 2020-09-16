@@ -6,16 +6,19 @@ export interface ServiceCard{
 }
 export interface ServiceInfo{
   name:string
-  about:string
-  "first-text":string
   title:string
-  "types-of-jobs":{
-    part:{
-      type:string
-      price:number
-      extra:string
-    }
-  }
+  about:string
+  text:string
+  "types-of-jobs":[{
+    component:string
+    price:number
+    extra:string
+  }]
+}
+export interface PartJob{
+  component:string
+  price:number
+  extra:string
 }
 export interface PositionRel{
   position: number
