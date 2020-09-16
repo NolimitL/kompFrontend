@@ -1,1 +1,23 @@
-<p>service-card works!</p>
+<section>
+  <div class="canvas">
+    <div class="information">
+      <h2></h2>
+      <p></p>
+      <p></p>
+    </div>
+    <aside class="sidebar">
+      <ul>
+        <li
+          *ngFor="let card of mainCardInfo; let i = index"
+          [routerLink]="['/services', card.name]"
+          class="slip" id="{{card.name}}">
+          <h3  [ngStyle]="{
+            backgroundColor: card.name == paramsName ? '#403D7A' : 'rgba(251, 251, 251, 0.97)',
+            color: card.name == paramsName ? 'rgba(251, 251, 251, 0.97)': '#403D7A'
+          }"
+          >{{card.title | uppercase}}</h3>
+        </li>
+      </ul>
+    </aside>
+  </div>
+</section>

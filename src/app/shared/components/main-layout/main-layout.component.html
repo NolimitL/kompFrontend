@@ -1,3 +1,41 @@
-<p>main-layout works!</p>
-<router-outlet></router-outlet>
+<header>
+  <div class="top-line">
+      <a id="link-logo" routerLink="/home"><img class="logotype" src="assets/img/logo-komp.svg" alt="logo-komp"></a>
+      <nav class="header_nav">
+          <ul>
+              <li><a (click)="toContacts('services')">Услуги</a></li>
+              <li><a (click)="toContacts('contacts')">Контакты</a></li>
+              <li><a [routerLink]="['/comments']">Отзывы</a></li>
+              <li><a [routerLink]="['/about']">О нас</a></li>
+          </ul>
+      </nav>
+      <button class="hamburger hamburger--spin" type="button" >
+          <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+          </span>
+      </button>
+  </div>
+
+  <div class="plate">
+      <ul class="slideMenu">
+          <li><a id="">Услуги</a></li>
+          <li><a href="" id="goto_contacts">Контакты</a></li>
+          <li><a href="" id="goto_commits">Отзывы</a></li>
+          <li><a href="">О нас</a></li>
+          <li>
+              <button class="slideUp" type="button">
+                  <span class="slideUp-box">
+                      <span class="slideUp-inner"></span>
+                  </span>
+              </button>
+          </li>
+      </ul>
+  </div>
+</header>
+
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
 <app-footer></app-footer>

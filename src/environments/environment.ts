@@ -2,8 +2,12 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
+import { FBDataBase } from './response.interface';
+
+export const environment: FBDataBase = {
+  production: false,
+  urlFbDb:'https://kompservice-web.firebaseio.com',
+  urlServiceCard:'https://kompservice-web.firebaseio.com/service-card'
 };
 
 /*

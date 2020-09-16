@@ -1,0 +1,73 @@
+.beginn{
+  padding: 180px 0px 200px;
+  .text1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color:#FFFFFF;
+    .komp-name{
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.1em;
+      text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+      max-width: 800px;
+      min-height: 220px;
+      // display: flex;
+      // align-items: center;
+      text-align: center;
+    }
+    .credo{
+      font-family: 'Fira Sans Condensed', sans-serif;
+      font-size: 28px;
+      font-style: italic;
+      font-weight: normal;
+      line-height: 150%;
+      letter-spacing: 0.1em;
+      text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+      // display: flex;
+      // align-items: center;
+      text-align: center;
+      margin: 65px 0px 80px;
+      max-width: 700px;
+      min-height: 40px;
+    }
+  }
+  .down-link{
+    text-decoration: none;
+    &:hover > .down-triangle{
+      cursor: pointer;
+      animation-play-state: paused;
+      transition-duration: 0.5s;
+      transition-delay: 10ms;
+      transition-timing-function: ease-out;
+      transform: translate(0px, 6px) scale(0.95);
+      filter: opacity(90%) drop-shadow(0px 6px 5px rgba(0,0,0,95%));
+    }
+  }
+  .down-triangle{
+    max-width: 150px;
+    max-height: 50px;
+    filter: opacity(70%) drop-shadow(0px 6px 8px rgba(0,0,0,90%));
+    transition-duration: 700ms;
+    transition-timing-function: ease-out;
+
+    animation-name: jumpy;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
+
+@keyframes jumpy{
+    0%{
+        transform: translate(0px, 0px)
+    }
+    100%{
+        transform: translate(0px, 7px)
+    }
+}

@@ -1,0 +1,19 @@
+<section class="all-services">
+  <div class="canvas">
+      <div class="wrapper" id="services">
+          <nav class="services">
+              <ul class="list">
+                  <li *ngFor="let service of services; let i=index"
+                  id="{{service.id}}" class="slip">
+                      <a [routerLink]="['/services', service.name]">
+                          <img class="images" src="{{service.img}}" alt="{{service.name}}"/>
+                          <div class="text-in">{{service.title}}</div>
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </div>
+</section>
+
+<app-info></app-info>

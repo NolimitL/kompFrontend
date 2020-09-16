@@ -1,19 +1,30 @@
+import { FlurDirective } from './../../shared/directives/flur.directive';
 import { NgModule } from "@angular/core";
+import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { ClipboardModule } from 'ngx-clipboard';
 
-import { GreetComponent } from './greet/greet.component';
+import { SharedModule } from './../../shared/shared.module';
 import { InfoComponent } from './info/info.component';
+import { ServiceViewComponent } from './service-view/service-view.component';
 
 const routes: Routes = [
-  {path:'', component:GreetComponent}
+  {path:'', component:ServiceViewComponent}
 ]
 
  @NgModule({
    declarations:[
-    GreetComponent,
-    InfoComponent
+    InfoComponent,
+    ServiceViewComponent,
+    FlurDirective
    ],
-   imports:[RouterModule.forChild(routes)],
-   exports:[RouterModule]
+   imports:[
+     CommonModule,
+     SharedModule,
+     ClipboardModule,
+     RouterModule.forChild(routes)
+    ],
+   exports:[RouterModule],
+   providers:[]
  })
  export class HomePageModule{}

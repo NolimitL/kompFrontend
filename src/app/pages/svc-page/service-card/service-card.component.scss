@@ -1,0 +1,37 @@
+.canvas{
+  margin: 120px 0px 100px;
+  display: grid;
+  grid-template-columns: 10px 6fr 2fr 10px;
+  grid-template-rows: 30px 450px 30px;
+  column-gap: 2%;
+  .information{
+    grid-column: 2;
+    grid-row: 2;
+    background-color: rgba(251, 251, 251, 0.97);
+    border-radius: 5px;
+    padding: 1%;
+  }
+  .sidebar{
+    grid-column: 3;
+    grid-row: 2;
+    ul{
+      height: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      li{
+        cursor: pointer;
+        h3{
+          transition-duration: 300ms;
+          background-color: rgba(251, 251, 251, 0.97);
+          border-radius: 5px;
+          padding: 8px 10px;
+          color: #403D7A;
+          &:hover{
+            transform: translateX(-5px);
+          }
+        }
+      }
+    }
+  }
+}

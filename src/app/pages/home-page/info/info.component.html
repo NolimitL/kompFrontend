@@ -1,2 +1,28 @@
-<p>info works!</p>
-<h3>HELLO i am INFO</h3>
+<section class="about" id="contacts">
+  <div class="canvas">
+      <div class="information neumorphism">
+          <div class="adress">
+              <h3>Адрес:</h3>
+              <p><a href="https://yandex.ru/maps/15/tula/?ll=37.612282%2C54.175062&mode=search&oid=1605727188&ol=biz&z=15" target="_blank">г. Тула   ул. Тимирязева, д.97</a></p>
+              <p>Тел:  +7 (953) 970-01-42</p>
+              <p id="copyText" (mouseenter)="visible = true"
+                (mouseleave)="visible = false">Email:
+                <span [ngStyle]="{textDecoration: visible ? 'underline' : null}"
+                  ngxClipboard [cbContent]="'tom701@rambler.ru'">tom701@rambler.ru
+                  <span *appFlur="visible"><img id="copy-clipboard" src="assets/img/copy-clipboard2.svg"></span>
+                </span>
+              </p>
+              <!-- <a href="mailto:tom701@rambler.ru?subject=Вопрос%20о%20ремонте/настройки&body=Здравствуйте%20Вадим,"></a> -->
+          </div>
+          <div class="worktime">
+              <h3>Режим работы:</h3>
+              <p class="timetable">Будние дни: 10.00 - 18.00 без обеда</p>
+              <p>Выходные: суббота, воскресенье</p>
+          </div>
+      </div>
+      <div class="map">
+          <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9464.578406007331!2d37.605649092159574!3d54.176957439973926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x36d69e797b5dffe1!2z0KDQtdC80L7QvdGCINC60L7QvNC_0YzRjtGC0LXRgNC-0LIg0Lgg0L7RgNCz0YLQtdGF0L3QuNC60Lg!5e0!3m2!1sru!2sru!4v1594730017136!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1f1181bc71643742c2715ab0d262414242466efa4386cfac03ce0b03716e9ffc&amp;source=constructor" width="100%" height="100%" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+.all-services .canvas{
+  padding: 45px 0px;
+  position: relative;
+  .wrapper{
+    margin: auto 100px;
+    a:active{
+      text-decoration: none;
+      outline: none;
+    }
+    .list{
+      list-style-type: none;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-flow: row wrap;
+      .slip{
+        width: 200px;
+        height: 205px;
+        background-color:rgba(251, 251, 251, 0.97);
+        /* background: linear-gradient(121deg, rgb(224, 224, 224,70%) 0%, rgba(255,255,255,100%) 80%);
+        box-shadow: 8px 5px 10px rgba(148,146, 183,73%), -5px -5px 10px rgba(234,234,254,100%); */
+        border-radius: 15px;
+        margin: 10px 25px 10px 25px;
+        display: flex;
+        text-align: center;
+        justify-content:center;
+        align-items:center;
+        flex-direction: column;
+        a{
+          font-family: 'IBM Plex Sans', sans-serif;
+          font-size: 18px;
+          font-weight: 500;
+          color:rgb(0, 0, 0);
+          line-height: 26px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          height: inherit;
+          width: inherit;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items:center;
+          .images{
+            max-width: 55%;
+          }
+          .text-in{
+            padding: 0 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .triangle-left{
+    display: inline-block;
+    position: absolute;
+    top: 345px;
+    right: 40px;
+    transition-duration: 300ms;
+    &:hover{
+      transition-duration: 400ms;
+      transition-timing-function: ease-out;
+      transform: scale(0.95);
+      filter: opacity(85%);
+    }
+  }
+}

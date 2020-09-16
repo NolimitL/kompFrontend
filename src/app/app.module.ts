@@ -1,13 +1,13 @@
-import { InfoComponent } from './pages/home-page/info/info.component';
-import { GreetComponent } from './pages/home-page/greet/greet.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { GreetComponent } from './pages/home-page/greet/greet.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +15,12 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     MainLayoutComponent,
     FooterComponent,
     ErrorPageComponent,
-    // GreetComponent,
-    // InfoComponent
+    GreetComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
