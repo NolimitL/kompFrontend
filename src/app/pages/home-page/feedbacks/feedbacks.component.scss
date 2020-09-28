@@ -71,21 +71,24 @@
           max-height: 100%;
         }
       }
+      button.btn:hover{
+        transition-duration: 200ms;
+        transform: scale(0.95);
+      }
       .btn{
         grid-row: 3;
         justify-self: right;
         margin-right: 10px;
+        transition-duration: 200ms;
+
         &.r{
           justify-self: left;
           margin-left: 10px;
         }
         cursor: pointer;
         h4{
-          font-size: 14px;
+          font-size: 15px;
           text-transform: uppercase;
-          a:hover{
-            text-decoration: underline;
-          }
         }
       }
     }

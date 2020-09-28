@@ -1,17 +1,15 @@
 <section>
   <div class="canvas">
-    <div class="information"
-      *ngIf="serviceShowedComponent;
+    <div class="information" *ngIf="serviceShowedComponent;
       else loading">
-      <h3>{{serviceShowedComponent.title}}</h3>
-      <p>{{serviceShowedComponent.about}}</p>
-      <ul >
-        <li *ngFor="let item of serviceShowedComponent['types-of-jobs']">
-          <h4>{{item.name}}</h4>
-          <p>{{item.price}}</p>
-          <P></P>
+      <h3 class="heading">{{serviceShowedComponent.title}}</h3>
+      <h4>Услуги и ремонт:</h4>
+      <ul id="list-work">
+        <li class="items" *ngFor="let item of serviceShowedComponent['types-of-jobs']">
+          {{item.component}}: {{item.price}} <span class="extra">{{(item.extra)}}</span>
         </li>
       </ul>
+      <p class="about">{{serviceShowedComponent.about}}</p>
     </div>
     <ng-template #loading>
       <div class="information">Загрузка данных о сервисе...</div>

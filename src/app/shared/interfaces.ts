@@ -8,11 +8,10 @@ export interface ServiceInfo{
   name:string
   title:string
   about:string
-  text:string
   "types-of-jobs":[{
     component:string
     price:number
-    extra:string
+    extra?:string
   }]
 }
 export interface PartJob{

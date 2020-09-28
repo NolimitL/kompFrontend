@@ -394,10 +394,15 @@ section{
     background-color: rgba(234,234,254,75%);
     background-attachment: fixed;
     .btn{
-      display: inline-block;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      display: block;
       background-color:rgba(247, 247, 247, 0.97);
       border-radius: 15px;
-      padding: 0px 10px;
+      border: none;
+      padding: 10px 10px;
     }
     h3{
       font-family: 'Source Sans Pro', sans-serif;

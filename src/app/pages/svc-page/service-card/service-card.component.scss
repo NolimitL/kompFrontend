@@ -9,9 +9,42 @@
     grid-row: 2;
     background-color: rgba(251, 251, 251, 0.97);
     border-radius: 5px;
-    padding: 1%;
-    h3{
+    padding: 1% 2%;
+    position: relative;
+    .heading{
       font-size: 1.45rem;
+      margin: 0px 0px 10px;
+    }
+    h4{
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0px 0px 5px;
+    }
+    #list-work{
+      font-size: 17px;
+      font-weight: 400;
+      .items{
+        margin: 0.1rem;
+        padding-left: 0px;
+        &::before{
+          content: "\2022";
+          font-size: 20px;
+        }
+        .extra{
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+    .about{
+      font-weight: 400;
+      letter-spacing: 0.05rem;
+      word-spacing: 0.2rem;
+      line-height: 1.15rem;
+      margin: 10px 0px 0px;
+      position: absolute;
+      bottom: 7%;
+      width: 96%;
     }
   }
   .sidebar{
