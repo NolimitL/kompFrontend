@@ -1,0 +1,48 @@
+<section class="comments">
+  <div class="canvas" id="commits">
+      <!-- <button class="arrow arrow-right" type="button">
+          <span class="arrow-box arrow-right-box">
+              <span class="arrow-inner arrow-right-inner"></span>
+          </span>
+      </button>
+      <button class="arrow arrow-left" type="button">
+          <span class="arrow-box arrow-left-box">
+              <span class="arrow-inner arrow-left-inner"></span>
+          </span>
+      </button> -->
+      <h2>Отзывы</h2>
+      <div class="block">
+          <div class="comment"
+          *ngFor="let comment of commentsList">
+            <h3 id="Name-user">{{comment.name}}</h3>
+            <span id="date">{{ comment.date | date:'short':null:'ru' }}</span>
+            <p id="text-user">
+              {{comment.text}}
+            </p>
+          </div>
+          <!-- <div class="input-comment">
+              <form action="" class="contact-form">
+                  <div class="sub neumorphism">
+                      <input class="focused" id="firstname" type="text" placeholder="Имя*" required/>
+                      <input class="focused" id="post-email" type="email" placeholder="Email*" required/>
+                  </div>
+                  <div class="text-in neumorphism" id="text-in-2">
+                      <textarea class="text-of-comments focused" name="comments" placeholder="Ваш отзыв"></textarea>
+                  </div>
+                  <input type="submit" value="Отправить" class="neumorphism"/>
+              </form>
+              <div class="text-in neumorphism" id="text-in-1">
+                  <textarea class="text-of-comments focused" name="comments" placeholder="Ваш отзыв"></textarea>
+              </div>
+          </div>
+           -->
+          <!-- Component-end input-comment-->
+          <div class="btn">
+            <a routerLink="/comments"><h4>Посмотреть больше отзывов</h4></a>
+          </div>
+          <div class="btn r">
+            <a routerLink="/comments/add-feedback"><h4>Написать отзыв</h4></a>
+          </div>
+      </div>
+    </div>
+</section>

@@ -24,3 +24,10 @@ export interface PositionRel{
   position: number
   name: string
 }
+export interface CommentsList{
+  id:number
+  name:string //Name of user
+  date:Date
+  type:string //What work have been done
+  text:string
+}

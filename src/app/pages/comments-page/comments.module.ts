@@ -1,14 +1,29 @@
-import { RouterModule, Routes } from '@angular/router';
-import { FeedbackComponent } from './feedback/feedback.component';
+import { CommonModule } from '@angular/common';
 import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from '@angular/router';
+
+import { FeedbackComponent } from './feedback/feedback.component';
+import { FeedbacksListComponent } from './feedbackslist/feedbackslist.component';
+import { DeclinationPipe } from 'src/app/shared/pipes/declination.pipe';
+
 
 const routes: Routes = [
-  {path:'', component:FeedbackComponent}
+  {path:'', redirectTo:'', pathMatch:'full', children:[
+    {path:'', component:FeedbacksListComponent},
+  ]},
+  {path:'add-feedback', component:FeedbackComponent}
 ]
 
 @NgModule({
-  declarations:[FeedbackComponent],
-  imports:[RouterModule.forChild(routes)],
+  declarations:[
+    FeedbackComponent,
+    FeedbacksListComponent,
+    DeclinationPipe
+  ],
+  imports:[
+    CommonModule,
+    RouterModule.forChild(routes)
+  ],
   exports:[RouterModule]
 })
 export class CommentsModule{}

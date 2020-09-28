@@ -1,0 +1,17 @@
+<section class="comments">
+  <div class="canvas" id="commits">
+    <h2>Отзывы клиентов о: </h2>
+    <div class="list-block">
+      <ul>
+        <li>list service</li>
+      </ul>
+    </div>
+    <aside>
+      <ul>
+        <li *ngFor="let item of asideList">
+          <h3>{{item.title | declination | uppercase}}</h3>
+        </li>
+      </ul>
+    </aside>
+  </div>
+</section>

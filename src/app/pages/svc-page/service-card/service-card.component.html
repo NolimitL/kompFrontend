@@ -1,7 +1,8 @@
 <section>
   <div class="canvas">
     <div class="information"
-      *ngIf="serviceShowedComponent; else loading">
+      *ngIf="serviceShowedComponent;
+      else loading">
       <h3>{{serviceShowedComponent.title}}</h3>
       <p>{{serviceShowedComponent.about}}</p>
       <ul >
