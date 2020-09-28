@@ -5,7 +5,8 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class DeclinationPipe implements PipeTransform{
   transform(word:string):string{
-    let arr = word.split('\r\n')
+    // console.log("Each word:", word)
+    let arr = word.split(' ')
     switch (arr[0]) {
       case 'Ремонт':
         arr[0] = 'Ремонте'
@@ -13,12 +14,12 @@ export class DeclinationPipe implements PipeTransform{
           arr[2] = 'заправке'
         }
         break;
-      case 'Настройка':
+      case 'Наcтройка':
         arr[0] = 'Настройке'
+        break;
       case 'Антивирусная':
         arr[0] = 'Антивирусной'
         arr[1] = 'защите'
-        arr[2] = 'и'
         arr[3] = 'лечении'
         break;
       case 'Восстановление':
@@ -28,7 +29,6 @@ export class DeclinationPipe implements PipeTransform{
         arr[0] = 'Установке'
         break;
     }
-    console.log('wordDone:', arr)
     return arr.join(' ')
   }
 }
