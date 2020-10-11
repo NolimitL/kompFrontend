@@ -17,8 +17,8 @@ export class FeedbacksComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.sub = this.commentsService.getCommentsList().subscribe(observer => {
-      this.commentsList = observer.splice(0,4)
-      console.log("Data from comments FB:", observer)
+      this.commentsList = observer
+      this.commentsList = this.commentsList.slice(0, 4)
     })
   }
 

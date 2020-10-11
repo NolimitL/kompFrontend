@@ -3,7 +3,6 @@ import { AfterContentChecked, Component, OnDestroy, OnInit } from '@angular/core
 import { ServiceCard, ServiceInfo } from 'src/app/shared/interfaces';
 import { RequestService } from 'src/app/shared/services/request.service';
 import { Subscription } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-service-card',
@@ -17,7 +16,7 @@ export class ServiceCardComponent implements OnInit, OnDestroy, AfterContentChec
   subService: Subscription
 
   paramsName = ''
-  mainCardInfo: ServiceCard[] = []
+  asideListCard: ServiceCard[] = []
   serviceInfo: ServiceInfo[] = []
   serviceShowedComponent: ServiceInfo
 
@@ -27,25 +26,24 @@ export class ServiceCardComponent implements OnInit, OnDestroy, AfterContentChec
     private actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    if (this.reqService.getSvcPos.length == 0) {
-      this.subSPos = this.reqService.formServiceView()
-        .subscribe(observer => this.mainCardInfo = observer)
+    if (this.reqService.getSvcPos.length === 0) {
+      (async () => {
+        this.asideListCard = await this.reqService.getServiceView().toPromise()
+      })()
     } else {
-      this.mainCardInfo = this.reqService.getSvcPos
+      this.asideListCard = this.reqService.getSvcPos
     }
-
     this.subParams = this.actRoute.params.subscribe((params: Params) => {
       this.paramsName = params.name
-    })
-    this.subService = this.reqService.getServiceInfo().subscribe(obj => {
-      this.serviceInfo = obj
-      this.serviceShowedComponent = this.serviceInfo.find(point => point.name == this.paramsName)
+      this.subService = this.reqService.getServiceInfo().subscribe(obj => {
+        this.serviceInfo = obj
+        this.serviceShowedComponent = this.serviceInfo.find(point => point.name === this.paramsName)
+      })
     })
   }
 
   ngAfterContentChecked(){
     this.serviceShowedComponent = this.serviceInfo.find(point => point.name == this.paramsName)
-    console.log("Showed service:", this.serviceShowedComponent)
   }
 
   ngOnDestroy(){

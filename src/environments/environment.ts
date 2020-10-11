@@ -6,8 +6,8 @@ import { FBDataBase } from './response.interface';
 
 export const environment: FBDataBase = {
   production: false,
-  urlFbDb:'https://kompservice-web.firebaseio.com',
-  urlServiceCard:'https://kompservice-web.firebaseio.com/service-card'
+  urlAPI:'http://localhost:3000/api'
+  // urlServiceCard:'https://kompservice-web.firebaseio.com/service-card'
 };
 
 /*

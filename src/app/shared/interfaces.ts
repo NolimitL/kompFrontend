@@ -1,10 +1,12 @@
 export interface ServiceCard{
-  id: string
+  _id: string
+  id: number
   title: string
   name: string
   img: string
 }
 export interface ServiceInfo{
+  _id: string
   name:string
   title:string
   about:string
@@ -20,13 +22,14 @@ export interface PartJob{
   extra:string
 }
 export interface PositionRel{
-  position: number
-  name: string
+  _id: string,
+  pos: {}
 }
 export interface CommentsList{
-  id:number
+  allowed: boolean
+  date:Date | string
+  _id:string
   name:string //Name of user
-  date:Date
-  type:string //What work have been done
+  type:string //In what kind of services have work been done
   text:string
 }

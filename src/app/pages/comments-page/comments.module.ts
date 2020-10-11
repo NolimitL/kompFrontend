@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FeedbacksListComponent } from './feedbackslist/feedbackslist.component';
 import { DeclinationPipe } from 'src/app/shared/pipes/declination.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   ],
   imports:[
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   exports:[RouterModule]

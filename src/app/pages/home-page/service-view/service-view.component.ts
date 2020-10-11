@@ -14,7 +14,7 @@ export class ServiceViewComponent implements OnInit {
   constructor(private reqService: RequestService) { }
 
   ngOnInit(): void {
-    this.reqService.formServiceView().subscribe(listOfService => {
+    this.reqService.getServiceView().subscribe(listOfService => {
       this.services = listOfService
     })
   }

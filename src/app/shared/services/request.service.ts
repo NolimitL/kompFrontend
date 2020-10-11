@@ -11,68 +11,38 @@ import { environment } from 'src/environments/environment';
 @Injectable({providedIn:"root"})
 export class RequestService{
 
-  servicesMainInfo: ServiceCard[] = []
+  serviceView: ServiceCard[] = []
 
   constructor(private http: HttpClient){}
 
   get getSvcPos(){
-    return this.servicesMainInfo
+    return this.serviceView
   }
 
-  //Service
-  getServicePosition(listCard: ServiceCard[]): Observable<ServiceCard[]>{
-    return this.http.get(`${environment.urlFbDb}/position-cards.json`)
-    .pipe(
-      map((list:PositionRel) => {
-        const position = []
-        Object.entries(list).forEach(pos => {
-          const obj = {name:pos[0], position:+pos[1]}
-          position.push(obj)
-        })
-        listCard.forEach(card => {
-          const obj = position.find(pos => pos['name']=== card['name'])
-          card.id = obj['position']
-        })
-        listCard.sort((a,b) => +a.id - +b.id)
-        this.servicesMainInfo = listCard
-        // console.log("List:",this.servicesMainInfo)
-        return listCard
-      })
-      )
-  }
-  getServiceList(): Observable<ServiceCard[]>{
-    return this.http.get(`${environment.urlServiceCard}/card-view.json`)
+  getServicePosition(listCard: ServiceCard[]): Observable<ServiceCard[]> | null{
+    return this.http.get(`${environment.urlAPI}/extra/position`)
       .pipe(
-        map(response => {
-          const cardList = []
-          Object.keys(response).forEach(key => {
-            const obj: ServiceCard = {
-              name: key,
-              id: null,
-              title: response[key].title,
-              img: response[key].img
-            }
-            cardList.push(obj)
+        map((position: PositionRel) => {
+          listCard.forEach(card => {
+            card.id = +position.pos[card.name]
           })
-          return cardList
+          this.serviceView = listCard.sort((a, b) => a.id - b.id)
+          return this.serviceView
         })
       )
   }
-  formServiceView(): Observable<ServiceCard[]>{
-    return this.getServiceList().pipe(
-      switchMap((list) => {
-        return this.getServicePosition(list)
-      })
-    )
+
+  getServiceView(): Observable<ServiceCard[]> | null{
+    return this.http.get<ServiceCard[]>(`${environment.urlAPI}/extra/card-view`)
+      .pipe(
+        switchMap((list) => {
+          return this.getServicePosition(list)
+        })
+      )
   }
 
-  getServiceInfo(): Observable<ServiceInfo[]>{
-    return this.http.get(`${environment.urlServiceCard}/service-info.json`)
-      .pipe(map(obj => {
-        const arr = []
-        Object.keys(obj).forEach(s => arr.push({...obj[s]}) )
-        return arr
-      }))
+  getServiceInfo(): Observable<ServiceInfo[]> | null{
+    return this.http.get<ServiceInfo[]>(`${environment.urlAPI}/extra/service-info`)
   }
 
 }

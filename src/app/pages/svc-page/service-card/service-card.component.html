@@ -14,10 +14,11 @@
     <ng-template #loading>
       <div class="information">Загрузка данных о сервисе...</div>
     </ng-template>
+
     <aside class="sidebar">
       <ul>
         <li
-          *ngFor="let card of mainCardInfo; let i = index"
+          *ngFor="let card of asideListCard"
           [routerLink]="['/services', card.name]"
           class="slip" id="{{card.name}}">
           <h3  [ngStyle]="{
