@@ -1,6 +1,7 @@
 import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { registerLocaleData } from '@angular/common';
 import ruLocale from '@angular/common/locales/ru';
 
@@ -24,7 +25,8 @@ registerLocaleData(ruLocale, 'ru')
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

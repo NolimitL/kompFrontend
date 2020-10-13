@@ -17,8 +17,6 @@
         width: 200px;
         height: 205px;
         background-color:rgba(251, 251, 251, 0.97);
-        /* background: linear-gradient(121deg, rgb(224, 224, 224,70%) 0%, rgba(255,255,255,100%) 80%);
-        box-shadow: 8px 5px 10px rgba(148,146, 183,73%), -5px -5px 10px rgba(234,234,254,100%); */
         border-radius: 15px;
         margin: 10px 25px 10px 25px;
         display: flex;
@@ -26,6 +24,19 @@
         justify-content:center;
         align-items:center;
         flex-direction: column;
+        transition-duration : 300ms;
+        &.hoveredOn{
+          background-color: rgba(255, 255, 255, 0.6);
+          &.hovered-in{
+            background-color: rgba(255, 255, 255, 0.97);
+          }
+        }
+        &.hoveredOff{
+          background-color: rgba(255, 255, 255, 0.97);
+          &.hovered-in{
+            background-color: rgba(255, 255, 255, 0.97);
+          }
+        }
         a{
           font-family: 'IBM Plex Sans', sans-serif;
           font-size: 18px;

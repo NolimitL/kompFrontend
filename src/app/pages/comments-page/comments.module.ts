@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FeedbacksListComponent } from './feedbackslist/feedbackslist.component';
 import { DeclinationPipe } from 'src/app/shared/pipes/declination.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FeedbacksSortPipe } from 'src/app/shared/pipes/feedbacks-sort.pipe';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   declarations:[
     FeedbackComponent,
     FeedbacksListComponent,
-    DeclinationPipe
+    DeclinationPipe,
+    FeedbacksSortPipe
   ],
   imports:[
     CommonModule,

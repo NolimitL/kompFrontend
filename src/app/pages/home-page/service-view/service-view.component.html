@@ -4,7 +4,14 @@
           <nav class="services">
               <ul class="list">
                   <li *ngFor="let service of services; let i=index"
-                  id="{{service.id}}" class="slip">
+                      id="{{service.id}}"
+                      class="slip"
+                      (mouseenter)="hover = !hover"
+                      (mouseleave)="hover = !hover"
+                      [class.hoveredOn]="hover"
+                      [class.hoveredOff]="!hover"
+                      appHover
+                    >
                       <a [routerLink]="['/services', service.name]">
                           <img class="images" src="{{service.img}}" alt="{{service.name}}"/>
                           <div class="text-in">{{service.title}}</div>

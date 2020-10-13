@@ -2,25 +2,26 @@ import { CommentsList } from 'src/app/shared/interfaces';
 import { CommentsService } from 'src/app/shared/services/comments.service';
 import { Subscription } from 'rxjs';
 import { RequestService } from 'src/app/shared/services/request.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
 
 @Component({
   selector: 'app-feedbackslist',
   templateUrl: './feedbackslist.component.html',
   styleUrls: ['./feedbackslist.component.scss']
 })
-export class FeedbacksListComponent implements OnInit, OnDestroy {
+export class FeedbacksListComponent implements OnInit, OnDestroy{
 
   asideList = []
   comments: CommentsList[] = []
   subAside: Subscription
   subCom: Subscription
   paramsName = ''
+  pipeFilter = ''
 
   constructor(private reqService: RequestService,
               private commentService: CommentsService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     if (this.reqService.getSvcPos.length == 0) {
       this.subAside = this.reqService.getServiceView()
         .subscribe(observer => {
