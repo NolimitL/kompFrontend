@@ -96,10 +96,13 @@
           border-radius: 8px;
           padding: 1rem 1.25rem;
           line-height: 1.5rem;
+          transition-duration: 200ms;
+          box-shadow: 0 0 10px rgba(179, 179, 179, 0.5);
           .titel-feedback{
             grid-column: 1;
             grid-row: 1;
             font-size: 18px;
+            color: #403D7A;
           }
           .date-view{
             grid-column: 2;

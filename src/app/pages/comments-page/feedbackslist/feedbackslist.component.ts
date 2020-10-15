@@ -39,6 +39,7 @@ export class FeedbacksListComponent implements OnInit, OnDestroy{
         })
     } else {
       this.comments = this.commentService.comments
+      console.log('comments:', this.comments);
     }
   }
 

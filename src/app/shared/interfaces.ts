@@ -26,10 +26,11 @@ export interface PositionRel{
   pos: {}
 }
 export interface CommentsList{
-  allowed: boolean
+  allowed?: boolean
+  _id?:string
   date:Date | string
-  _id:string
   name:string //Name of user
   type:string //In what kind of services have work been done
   text:string
+  phone:string
 }

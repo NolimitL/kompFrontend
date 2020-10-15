@@ -2,7 +2,8 @@ import { CommentsList } from 'src/app/shared/interfaces';
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name:'sort'
+  name:'sort',
+  pure: false
 })
 export class FeedbacksSortPipe implements PipeTransform{
   transform(comments: CommentsList[], sortBy: string = ''): CommentsList[] {

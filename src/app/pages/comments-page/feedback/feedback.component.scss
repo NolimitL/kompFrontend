@@ -1,0 +1,123 @@
+.comments{
+  margin-top: 200px;
+  .canvas{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin: 80px 0px;
+    padding: 2.5% 15%;
+    justify-content: center;
+    #inf-form{
+      margin: auto;
+      display: grid;
+      grid-template-columns: 3fr 4fr;
+      grid-template-rows: 2fr 2fr 2fr 1fr;
+      column-gap: 4rem;
+      align-items: flex-start;
+      padding: 3% 5%;
+      background-color: rgba(247, 247, 247, 0.97);
+      border-radius: 5px;
+      border: none;
+      color: #403D7A;
+      position: relative;
+      label{
+        margin: 5px 5px;
+      }
+      #d-options{
+        #inf-type{
+          font-size: 15px;
+          font-weight: 500;
+          color: #403D7A;
+          font-family: "IBM Plex Sans", sans-serif;
+          letter-spacing: 0.05em;
+          .inf-options{
+            font-size: 15px;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #403D7A;
+          }
+        }
+      }
+      .d-flex{
+        display: flex;
+        flex-flow: column nowrap;
+        #inf-text{
+          min-height: 200px;
+        }
+        .validators{
+          font-size: 12px;
+          color: crimson;
+          margin-left: 0.5rem;
+        }
+      }
+      #d-name{
+        grid-row: 1;
+        grid-column: 1;
+      }
+      #d-phone{
+        grid-row: 2;
+        grid-column: 1;
+      }
+      #d-oprions{
+        grid-row: 3;
+        grid-column: 1;
+      }
+      #d-text{
+        grid-row-start: 1;
+        grid-row-end: 4;
+        grid-column: 2;
+      }
+      .input-control{
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 500;
+        max-width: 100%;
+        min-height: 2rem;
+        border: none;
+        border-radius: 5px;
+        background-color:  rgba(234,234,254,75%);
+        transition-duration: 200ms;
+        padding-left: 0.8rem;
+        &:focus{
+          transition-duration: 200ms;
+          box-shadow: 0 3px 5px rgba(179, 179, 179, 0.5);
+        }
+        &#inf-name,
+        &#inf-phone{
+          margin-bottom: 0.25rem;
+        }
+        &#inf-text{
+          position: relative;
+          padding-top: 0.5rem;
+          &::-webkit-scrollbar{
+            display: none;
+          }
+        }
+      }
+      .btn-submit{
+        width: 50%;
+        grid-row: 4;
+        grid-column: 2;
+        align-self: flex-end;
+        justify-self: center;
+        transition-duration: 200ms;
+        color: #403D7A;
+        box-shadow: 0 3px 5px rgba(179, 179, 179, 0.5);
+        &:hover{
+          transition-duration: 200ms;
+          transform: scale(0.97);
+          box-shadow: 0 3px 5px #403d7a94;
+        }
+        &.disabled-btn{
+          background-color:rgba(232, 232, 232, 0.5);
+          &:hover{
+            box-shadow: 0 3px 5px rgba(179, 179, 179, 0.5);
+            transform: none;
+          }
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,80 @@
 <section class="comments">
   <div class="canvas" id="commits">
-    <h2>Написание отзыва о сервисе</h2>
-    <form [formGroup]="form">
+    <div class="form-block">
+      <form [formGroup]="form" id="inf-form" (ngSubmit)="submit()">
+        <div id="d-name" class="d-flex">
+          <label for="inf-name">Ваше имя:</label>
+          <input type="text" id="inf-name" formControlName="name" class="input-control">
+          <div class="validators"
+            *ngIf="form.get('name').invalid && form.get('name').touched">
+            <small  *ngIf="form.get('name').errors.required">
+              Поле обязательно для заполнения
+            </small>
+            <small *ngIf="form.get('name').errors.minlength">
+              Минимальное кол-во символов {{form.get('name').errors.minlength.requiredLength}}, введено {{form.get('name').errors.minlength.actualLength}}
+            </small>
+            <small *ngIf="form.get('name').errors.maxlength">
+              Максимальное кол-во символов {{form.get('name').errors.maxlength.requiredLength}}, введено {{form.get('name').errors.maxlength.actualLength}}
+            </small>
+          </div>
+        </div>
 
-    </form>
+        <div id="d-phone" class="d-flex">
+          <!-- <pre>{{form.get('phone').errors | json}}</pre> -->
+          <label for="inf-phone">Номер телефона:</label>
+          <input type="text" id="inf-phone" formControlName="phone" class="input-control" placeholder="+7 (***) *** ** **">
+          <div class="validators"
+            *ngIf="form.get('phone').invalid && form.get('phone').touched">
+            <small  *ngIf="form.get('phone').errors.required">
+              Поле обязательно для заполнения
+            </small>
+            <small  *ngIf="form.get('phone').errors.pattern">
+              Неправильный формат номера (+7 *** *** ** **)
+            </small>
+            <small  *ngIf="form.get('phone').errors.minlength">
+              Номер должен быть не меньше {{form.get('phone').errors.minlength.requiredLength}} знаков
+            </small>
+            <small  *ngIf="form.get('phone').errors.maxlength">
+              Номер должен быть не больше {{form.get('phone').errors.maxlength.requiredLength}} знаков
+            </small>
+
+          </div>
+        </div>
+
+        <div id="d-options" class="d-flex">
+          <label for="inf-type">Какой услугой вы пользовались?</label>
+          <select id="inf-type" formControlName="type" class="input-control">
+            <option
+              *ngFor="let option of options" value="{{option.name}}"
+              class="inf-options"
+            >{{option.title}}</option>
+          </select>
+          <div class="validators"
+            *ngIf="form.get('type').invalid && form.get('type').touched">
+            <small  *ngIf="form.get('type').errors.required">
+              Поле обязательно для заполнения
+            </small>
+          </div>
+        </div>
+
+        <div id="d-text" class="d-flex">
+          <label for="inf-text">Отзыв:</label>
+          <textarea type="text" id="inf-text" formControlName="text" placeholder="" class="input-control"></textarea>
+          <div class="validators"
+          *ngIf="form.get('text').invalid && form.get('text').touched">
+            <small  *ngIf="form.get('text').errors.required">
+              Поле обязательно для заполнения
+            </small>
+            <small *ngIf="form.get('text').errors.maxlength">
+              Максимальное кол-во символов {{form.get('text').errors.maxlength.requiredLength}}
+            </small>
+          </div>
+        </div>
+
+        <button [ngClass]="{'disabled-btn': form.invalid}"
+        type="submit" class="btn btn-submit" [disabled]="form.invalid || form.pending">Отправить отзыв</button>
+
+      </form>
+    </div>
   </div>
 </section>

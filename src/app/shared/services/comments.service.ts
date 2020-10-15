@@ -27,5 +27,10 @@ export class CommentsService{
       )
   }
 
+  postComment(body: CommentsList): void {
+    this.http.post(`${environment.urlAPI}/comments`, body)
+      .subscribe(value => console.log("Value from server: ",value))
+  }
+
 
 }
