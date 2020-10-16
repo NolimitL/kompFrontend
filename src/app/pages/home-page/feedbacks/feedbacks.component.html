@@ -5,10 +5,10 @@
           <div class="comment"
           *ngFor="let comment of commentsList">
             <h3 id="Name-user">{{comment.name}}</h3>
-            <span id="date">{{ comment.date | date:'short':null:'ru' }}</span>
-            <p id="text-user">
+            <span id="date">{{ comment.date | date:'MM/dd/yy':'ru' }}</span>
+            <div id="text-user">
               {{comment.text}}
-            </p>
+            </div>
           </div>
           <button class="btn" routerLink="/comments">
             <h4>Посмотреть больше отзывов</h4>

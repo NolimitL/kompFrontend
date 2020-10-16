@@ -1,6 +1,6 @@
-<!-- <footer class="footer">
+<footer class="footer">
   <div class="canvas">
-      <div class="about-company block" id="AR_1">
+      <!-- <div class="about-company block" id="AR_1">
           <h3 class="column-name">О компании</h3>
           <button class="arrow-down" type="menu">
               <span class="arrow-down-box">
@@ -13,13 +13,13 @@
               <li><a href="">История</a></li>
               <li><a href="">Достижения</a></li>
           </ul>
-      </div>
-      <ul class="links-to-company-view links actived_slideDown">
+      </div> -->
+      <!-- <ul class="links-to-company-view links actived_slideDown">
           <li><a href="">О нас</a></li>
           <li><a href="">Цели компании</a></li>
           <li><a href="">История</a></li>
           <li><a href="">Достижения</a></li>
-      </ul>
+      </ul> -->
       <div class="menu-website block" id="AR_2">
           <h3 class="column-name">Карта сайта</h3>
           <button class="arrow-down" type="menu">
@@ -28,20 +28,20 @@
               </span>
           </button>
           <ul class="menu-site links">
-              <li><a href=""><li>Главная</a></li>
-              <li><a href=""><li>Услуги и цены</a></li>
-              <li><a href=""><li>Отзывы</a></li>
-              <li><a href=""><li>Контакты</a></li>
-              <li><a href=""><li>О нас</a></li>
+              <li><a (click)="toAnchor('welcome-start')" class="goto">Главная</a></li>
+              <li><a (click)="toAnchor('services')"><li>Услуги и цены</a></li>
+              <li><a routerLink="/comments"><li>Отзывы</a></li>
+              <li><a (click)="toAnchor('contacts')"><li>Контакты</a></li>
+              <li><a routerLink="/about"><li>О нас</a></li>
           </ul>
       </div>
-      <ul class="menu-site links actived_slideDown">
+      <!-- <ul class="menu-site links actived_slideDown">
           <li><a href=""><li>Главная</a></li>
           <li><a href=""><li>Услуги и цены</a></li>
           <li><a href=""><li>Отзывы</a></li>
           <li><a href=""><li>Контакты</a></li>
           <li><a href=""><li>О нас</a></li>
-      </ul>
+      </ul> -->
       <div class="social-links block" id="AR_3">
           <h3 class="column-name">Мы в соц. сетях</h3>
           <button class="arrow-down" type="menu">
@@ -80,7 +80,7 @@
                   Facebook</a></li>
           </ul>
       </div>
-      <ul class="links-to-SM links actived_slideDown">
+      <!-- <ul class="links-to-SM links actived_slideDown">
           <li><a href="">WhatsApp
               <picture>
                   <source srcset="src/social-media/whatsapp.webp" type="image/webp">
@@ -104,9 +104,9 @@
               <picture>
                   <img src="src/social-media/facebook.png" alt="" width="20px" height="20px"/>
               </picture></a></li>
-      </ul>
+      </ul> -->
   </div>
-</footer> -->
+</footer>
 <!-- Component-end footer-main -->
 
 <!-- Component footer-extra -->

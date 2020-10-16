@@ -25,50 +25,48 @@
     .block{
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 4fr 4fr 1fr;
-      align-items: center;
+      align-items: baseline;
       justify-content: center;
       padding: 15px 0px 0px;
       max-width: calc(100% - 100px);
       .comment{
-        /* background-color:#FFFFFF; */
-        background-color:rgba(247, 247, 247, 0.97);
-        border-radius: 15px;
-        max-height: 220px;
-        margin: 10px 10px 15px;
-        padding: 10px 20px 20px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 4fr;
-        align-items:start;
-        position: relative;
+         line-height: 1.5rem;
+         background-color:rgba(247, 247, 247, 0.97);
+         border-radius: 8px;
+         max-height: 180px;
+         margin: 10px 10px 15px;
+         padding: 1rem 1.25rem;
+         display: grid;
+         row-gap: 0.6rem;
+         align-items:start;
+         transition-duration: 200ms;
+         box-shadow: 0 0 10px rgba(179, 179, 179, 0.5);
         #date{
-          grid-column: 2;
-          grid-row: span 1;
-          font-size: 14px;
-          font-weight: 300;
-          letter-spacing: normal;
-          justify-self: right;
+           grid-column: 2;
+           grid-row: span 1;
+           font-size: 14px;
+           font-weight: 300;
+           letter-spacing: normal;
+           justify-self: right;
         }
         #Name-user{
           grid-column: 1;
           grid-row: span 1;
           text-align: start;
-          padding-left: 15px;
         }
         #text-user{
           grid-row: 2;
-          grid-column: span 2;
+          grid-column-start: 1;
+          grid-column-end: 3;
           font-size: 16px;
           font-weight: 500;
           line-height: 25px;
           letter-spacing: 0.08em;
-          border: rgba(179, 179, 179, 0.5) solid 1px;
+          // border: rgba(179, 179, 179, 0.5) solid 1px;
           border-radius: 5px;
           max-width: 100%;
+          max-height: calc(180px - 1.85rem);
           overflow: auto;
-          padding: 5px;
-          max-height: 100%;
         }
       }
       button.btn:hover{

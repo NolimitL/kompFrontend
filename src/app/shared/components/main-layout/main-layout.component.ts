@@ -1,5 +1,6 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-main-layout',
@@ -14,11 +15,17 @@ export class MainLayoutComponent implements OnInit {
   ngOnInit(){
   }
 
-  toContacts(togo: string){
-    this.router.navigate(['/home'], {fragment:null})
-    .finally(() => {
-      this.router.navigate(['/home'], {fragment:togo})
+  toAnchor(anchor){
+    if (this.router.url === '/home'
+        || this.router.url === '/home#services'
+        || this.router.url === '/home#contacts') {
+      document.getElementById(anchor).scrollIntoView({
+        behavior:"smooth",
+        block:"start"
       })
+    }else{
+      this.router.navigate(['/home'], {fragment:anchor})
+    }
   }
 
 }

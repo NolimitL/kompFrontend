@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { PositionRel, ServiceInfo } from './../interfaces';
 import { ServiceCard } from 'src/app/shared/interfaces';
 import { environment } from 'src/environments/environment';

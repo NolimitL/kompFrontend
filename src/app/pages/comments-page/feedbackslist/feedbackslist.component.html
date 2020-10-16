@@ -8,8 +8,8 @@
     <h2>Отзывы клиентов о: </h2>
     <div class="list-block">
       <ul id="list-feedback">
-          <li *ngFor="let comment of comments | sort:pipeFilter" class="feedback"
-          >
+        <li
+        *ngFor="let comment of comments | sort:pipeFilter" class="feedback">
           <h4 class="titel-feedback">{{comment.name}}</h4>
           <span class="date-view">{{comment.date |date:"MM/dd/yy"}}</span>
           <p class="text-feedback">{{comment.text}}</p>
@@ -28,7 +28,7 @@
           }"
           >{{item.title | declination | uppercase}}</h3>
         </li>
-        
+
       </ul>
     </aside>
   </div>

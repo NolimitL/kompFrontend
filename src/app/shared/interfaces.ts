@@ -10,11 +10,16 @@ export interface ServiceInfo{
   name:string
   title:string
   about:string
-  "types-of-jobs":[{
-    component:string
-    price:number
-    extra?:string
-  }]
+  main:{
+    text:string,
+    nexttext:string,
+    types:[
+      {
+        term:string,
+        price:string
+      }
+    ]
+  }
 }
 export interface PartJob{
   component:string

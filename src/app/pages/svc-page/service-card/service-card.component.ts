@@ -12,8 +12,8 @@ import { Subscription } from 'rxjs';
 export class ServiceCardComponent implements OnInit, OnDestroy, AfterContentChecked{
 
   subParams: Subscription
-  subSPos: Subscription
   subService: Subscription
+  subActRoute: Subscription
 
   paramsName = ''
   asideListCard: ServiceCard[] = []
@@ -21,22 +21,17 @@ export class ServiceCardComponent implements OnInit, OnDestroy, AfterContentChec
   serviceShowedComponent: ServiceInfo
 
   constructor(
-    private reqService: RequestService,
     private router: Router, //for back button
     private actRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    if (this.reqService.getSvcPos.length === 0) {
-      (async () => {
-        this.asideListCard = await this.reqService.getServiceView().toPromise()
-      })()
-    } else {
-      this.asideListCard = this.reqService.getSvcPos
-    }
+  ngOnInit() {
+    this.subActRoute = this.actRoute.data.subscribe(data => {
+      this.asideListCard = data.asideList
+    })
     this.subParams = this.actRoute.params.subscribe((params: Params) => {
       this.paramsName = params.name
-      this.subService = this.reqService.getServiceInfo().subscribe(obj => {
-        this.serviceInfo = obj
+      this.subService = this.actRoute.data.subscribe(data => {
+        this.serviceInfo = data.serviceInf
         this.serviceShowedComponent = this.serviceInfo.find(point => point.name === this.paramsName)
       })
     })
@@ -50,11 +45,11 @@ export class ServiceCardComponent implements OnInit, OnDestroy, AfterContentChec
     if (this.subParams) {
       this.subParams.unsubscribe()
     }
-    if (this.subSPos) {
-      this.subSPos.unsubscribe()
-    }
     if (this.subService) {
       this.subService.unsubscribe()
+    }
+    if (this.subActRoute) {
+      this.subActRoute.unsubscribe()
     }
   }
 

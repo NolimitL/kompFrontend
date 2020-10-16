@@ -386,6 +386,7 @@ a{
   outline: none;
   color:#000000;
 }
+footer,
 section{
   font-family: 'Source Sans Pro';
   font-weight: 600;
@@ -413,4 +414,15 @@ section{
   .wrapper{
     margin: auto 135px;
   }
+}
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background-color: rgba(179, 179, 179, 0.5);
+}
+::-webkit-scrollbar-thumb{
+  border: none;
+  border-radius: 35px;
+  background-color: rgba(25, 25, 112, 0.5)
 }

@@ -4,6 +4,8 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { GreetComponent } from './pages/home-page/greet/greet.component';
+import { AsideListResolver } from './shared/resolvers/asidelist.resolver';
+import { ServiceInfoResolver } from './shared/resolvers/serviceinfo.resolver';
 
 const routes: Routes = [
   {path:'', component:MainLayoutComponent, children:[
@@ -39,9 +41,10 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      scrollPositionRestoration:'top',
       preloadingStrategy: PreloadAllModules,
-      anchorScrolling: "enabled" //для перехода к фрагменту
+      scrollPositionRestoration: "top",
+      // anchorScrolling: 'enabled', //для перехода к фрагменту
+      scrollOffset: [0, 0]
     })
   ],
   exports: [RouterModule]

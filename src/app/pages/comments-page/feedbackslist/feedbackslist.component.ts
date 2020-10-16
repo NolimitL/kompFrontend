@@ -1,7 +1,6 @@
+import { ActivatedRoute } from '@angular/router';
 import { CommentsList } from 'src/app/shared/interfaces';
-import { CommentsService } from 'src/app/shared/services/comments.service';
 import { Subscription } from 'rxjs';
-import { RequestService } from 'src/app/shared/services/request.service';
 import { Component, OnInit, OnDestroy} from '@angular/core';
 
 @Component({
@@ -18,29 +17,15 @@ export class FeedbacksListComponent implements OnInit, OnDestroy{
   paramsName = ''
   pipeFilter = ''
 
-  constructor(private reqService: RequestService,
-              private commentService: CommentsService) { }
+  constructor(private activeRoute: ActivatedRoute) { }
 
   ngOnInit(){
-    if (this.reqService.getSvcPos.length == 0) {
-      this.subAside = this.reqService.getServiceView()
-        .subscribe(observer => {
-          this.asideList = observer
-          console.log("list", this.asideList);
-        })
-    } else {
-      this.asideList = this.reqService.getSvcPos
-    }
-
-    if (this.commentService.comments.length === 0) {
-      this.subCom = this.commentService.getCommentsList()
-        .subscribe(observer => {
-          this.comments = observer
-        })
-    } else {
-      this.comments = this.commentService.comments
-      console.log('comments:', this.comments);
-    }
+    this.subCom = this.activeRoute.data.subscribe(data => {
+      this.comments = data.commentsRes
+    })
+    this.subAside = this.activeRoute.data.subscribe(data => {
+      this.asideList = data.asideList
+    })
   }
 
   ngOnDestroy(){

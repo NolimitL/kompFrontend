@@ -1,12 +1,13 @@
-<section class="beginn" id="#welcome">
+<section class="beginn" id="welcome-start">
   <div class="wrapper">
       <div class="text1">
           <div class="komp-name">Комп - ремонт и настройка цифровой техники</div>
           <div class="credo">Индивидуальный подход к каждому клиенту</div>
-          <div class="down-tr">
-              <a class="down-link">
-                  <img class="down-triangle" [src]="triangle" alt="down-triangle">
-              </a>
+          <div class="down-tr" (click)="toAnchor('services')">
+            <label for="triangle" id="label-text">К услугам</label>
+            <a class="down-link" id="triangle">
+                <img class="down-triangle" [src]="triangle" alt="down-triangle">
+            </a>
           </div>
       </div>
   </div>

@@ -3,12 +3,14 @@
     <div class="information" *ngIf="serviceShowedComponent;
       else loading">
       <h3 class="heading">{{serviceShowedComponent.title}}</h3>
-      <h4>Услуги и ремонт:</h4>
+      <!-- <h4>Услуги и ремонт:</h4> -->
+      <p id="text-before">{{serviceShowedComponent.main.text}}</p>
       <ul id="list-work">
-        <li class="items" *ngFor="let item of serviceShowedComponent['types-of-jobs']">
-          {{item.component}}: {{item.price}} <span class="extra">{{(item.extra)}}</span>
+        <li class="items" *ngFor="let item of serviceShowedComponent.main.types">
+          {{item.term}}: {{item.price}} руб.
         </li>
       </ul>
+      <p id="text-after">{{serviceShowedComponent.main.nexttext}}</p>
       <p class="about">{{serviceShowedComponent.about}}</p>
     </div>
     <ng-template #loading>
