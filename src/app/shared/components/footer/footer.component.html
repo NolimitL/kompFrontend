@@ -29,10 +29,10 @@
           </button>
           <ul class="menu-site links">
               <li><a (click)="toAnchor('welcome-start')" class="goto">Главная</a></li>
-              <li><a (click)="toAnchor('services')"><li>Услуги и цены</a></li>
-              <li><a routerLink="/comments"><li>Отзывы</a></li>
-              <li><a (click)="toAnchor('contacts')"><li>Контакты</a></li>
-              <li><a routerLink="/about"><li>О нас</a></li>
+              <li><a (click)="toAnchor('services')" class="goto">Услуги и цены</a></li>
+              <li><a routerLink="/comments" class="goto">Отзывы</a></li>
+              <li><a (click)="toAnchor('contacts')" class="goto">Контакты</a></li>
+              <li><a routerLink="/about" class="goto">О нас</a></li>
           </ul>
       </div>
       <!-- <ul class="menu-site links actived_slideDown">
@@ -44,38 +44,39 @@
       </ul> -->
       <div class="social-links block" id="AR_3">
           <h3 class="column-name">Мы в соц. сетях</h3>
+          <h4 id="text-vertical">НАПИШИ НАМ</h4>
           <button class="arrow-down" type="menu">
               <span class="arrow-down-box">
                   <span class="arrow-down-inner"></span>
               </span>
           </button>
           <ul class="links-to-SM links">
-              <li><a href="">
+              <li class="goto"><a href="https://wa.me/79109457564?text=Здравствуйте!+Я+по+поводу+" target="_blanck">
                   <picture>
-                      <source srcset="src/social-media/whatsapp.webp" type="image/webp">
-                      <img src="src/social-media/whatsapp.png" alt="" width="20px" height="20px"/>
+                      <source srcset="assets/img/social-media/whatsapp.webp" type="image/webp">
+                      <img src="assets/img/social-media/whatsapp.png" alt="" width="20px" height="20px"/>
                   </picture>
                   WhatsApp</a></li>
-              <li><a href="">
+              <li class="goto"><a href="https://t.me/joinchat/LrXuX1fdJIO9Oj5xEFH_mw" target="_blanck">
                   <picture>
-                      <source srcset="src/social-media/telegram.webp" type="image/webp">
-                      <img src="src/social-media/telegram.png" alt="" width="20px" height="20px"/>
+                      <source srcset="assets/img/social-media/telegram.webp" type="image/webp">
+                      <img src="assets/img/social-media/telegram.png" alt="" width="20px" height="20px"/>
                   </picture>
                   Telegram</a></li>
-              <li><a href="">
+              <li class="goto"><a href="https://vk.com/kompfoto" target="_blanck">
                   <picture>
-                      <img src="src/social-media/vk.svg" alt="" width="20px" height="20px"/>
+                      <img src="assets/img/social-media/vk.svg" alt="" width="20px" height="20px"/>
                   </picture>
                   ВКонтакте</a></li>
-              <li><a href="">
+              <li class="goto"><a href="https://www.instagram.com/komp_tula/" target="_blanck">
                   <picture>
-                      <source srcset="src/social-media/instagram-sketched.webp" type="image/webp">
-                      <img src="src/social-media/instagram-sketched.png" alt="" width="20px" height="20px"/>
+                      <source srcset="assets/img/social-media/instagram-sketched.webp" type="image/webp">
+                      <img src="assets/img/social-media/instagram-sketched.png" alt="" width="20px" height="20px"/>
                   </picture>
                   Instagram</a></li>
-              <li><a href="">
+              <li class="goto"><a href="https://www.facebook.com/%D0%9A%D0%9E%D0%9C%D0%9F-100517064817264" target="_blanck">
                   <picture>
-                      <img src="src/social-media/facebook.png" alt="" width="20px" height="20px"/>
+                      <img src="assets/img/social-media/facebook.png" alt="" width="20px" height="20px"/>
                   </picture>
                   Facebook</a></li>
           </ul>
@@ -116,7 +117,7 @@
           <a href="">@Все права защищены</a>
           <a href="">Политика конфендициальности</a>
       </div>
-      <div class="author">Автор: @Leonid - дизайн и верстка</div>
+      <div class="author">Автор сайта: @NoLimit</div>
   </div>
   <!-- Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
 </footer>

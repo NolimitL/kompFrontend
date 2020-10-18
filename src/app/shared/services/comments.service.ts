@@ -10,7 +10,10 @@ export class CommentsService{
 
   commentsArr:CommentsList[] = []
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient){
+    let time = new Date().getTime()
+    const interval = 300000
+  }
 
   get comments(){
     return this.commentsArr
@@ -27,8 +30,8 @@ export class CommentsService{
       )
   }
 
-  postComment(body: CommentsList): void {
-    this.http.post(`${environment.urlAPI}/comments`, body)
+  postComment(body: CommentsList): Observable<any> {
+    return this.http.post(`${environment.urlAPI}/comments`, body)
   }
 
 

@@ -28,7 +28,16 @@
           }"
           >{{item.title | declination | uppercase}}</h3>
         </li>
-
+        <li class="list-aside">
+          <h3 class="title-list"
+          (click)="pipeFilter = 'other'"
+          [ngStyle]="{
+            backgroundColor: pipeFilter == 'other' ? '#403D7A' : 'rgba(251, 251, 251, 0.97)',
+            color: pipeFilter == 'other' ? 'rgba(251, 251, 251, 0.97)': '#403D7A',
+            textTransform: 'uppercase'
+          }"
+          >Остальные</h3>
+        </li>
       </ul>
     </aside>
   </div>

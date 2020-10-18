@@ -1,8 +1,10 @@
 import { SharedModule } from './shared/shared.module';
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { registerLocaleData } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HeadersInterceptor } from './shared/services/headers.interceptor';
 import ruLocale from '@angular/common/locales/ru';
 
 import { AppComponent } from './app.component';
@@ -13,6 +15,11 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { GreetComponent } from './pages/home-page/greet/greet.component';
 
 registerLocaleData(ruLocale, 'ru')
+const INTERCEPTOR: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: HeadersInterceptor,
+  multi: true
+}
 
 @NgModule({
   declarations: [
@@ -28,7 +35,7 @@ registerLocaleData(ruLocale, 'ru')
     SharedModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [INTERCEPTOR],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

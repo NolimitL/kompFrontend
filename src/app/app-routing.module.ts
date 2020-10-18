@@ -4,8 +4,6 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { GreetComponent } from './pages/home-page/greet/greet.component';
-import { AsideListResolver } from './shared/resolvers/asidelist.resolver';
-import { ServiceInfoResolver } from './shared/resolvers/serviceinfo.resolver';
 
 const routes: Routes = [
   {path:'', component:MainLayoutComponent, children:[

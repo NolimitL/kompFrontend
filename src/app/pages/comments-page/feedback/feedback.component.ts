@@ -76,7 +76,7 @@ export class FeedbackComponent implements OnInit {
         ...this.form.value,
         date: new Date()
       }
-      this.commentService.postComment(dataPost)
+      this.commentService.postComment(dataPost).subscribe(v => console.log("data:", v))
     }
     this.form.reset()
   }

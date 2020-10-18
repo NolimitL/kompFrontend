@@ -1,0 +1,23 @@
+#error{
+  position: relative;
+  .canvas-error{
+    margin: 140px 0px 120px;
+    padding: 30px 0px 30px 70px;
+    .error-text{
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0.1em;
+      color: rgba(0, 0, 0, 0.8);
+      padding: 10px 0px;
+    }
+    .btn{
+      transition-duration: 100ms;
+      &:hover{
+        transition-duration: 100ms;
+        color: #403D7A;
+      }
+    }
+  }
+}

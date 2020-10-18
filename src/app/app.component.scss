@@ -1,213 +1,217 @@
+// router-outlet{
+//   position: absolute;
+// }
+// // -----
+// // ARROWS
+// // -----
+// .arrow-down{
+//   padding: 10px;
+//   display: inline-block;
+//   cursor: pointer;
+//   text-transform: none;
+//   background-color: transparent;
+//   border: 0;
+//   margin-right: 10px;
+//   overflow: visible;
+//   display: none;
+// }
+
+// .arrow-down-box{
+//   width: 40px;
+//   height: 24px;
+//   display: inline-block;
+//   position: relative;
+// }
+// .arrow-down-inner{
+//   display: block;
+// }
+
+// .arrow-down-inner::before,
+// .arrow-down-inner::after{
+//   width: 24px;
+//   height: 4px;
+//   background-color: #403D7A;
+//   position: absolute;
+//   top: 50%;
+// }
+// .arrow-down-inner::before{
+//   transition-property: transform;
+//   transition-duration: 300ms;
+//   border-radius:50px 100px 100px 50px;
+//   content:"";
+//   display: block;
+//   left: -0.7px;
+//   transform: rotate(38deg);
+// }
+// .arrow-down-inner::after{
+//   transition-property: transform;
+//   transition-duration: 300ms;
+//   content:"";
+//   border-radius:100px 50px 50px 100px;
+//   display: block;
+//   right: -0.7px;
+//   transform: rotate(-38deg);
+// }
+// /* active */
+// .arrow-down-box.active .arrow-down-inner::before{
+//   transition-property: transform;
+//   transition-duration: 300ms;
+//   transform: rotate(-38deg);
+// }
+// .arrow-down-box.active .arrow-down-inner::after{
+//   transition-property: transform;
+//   transition-duration: 300ms;
+//   transform: rotate(38deg);
+// }
+
+
+
+
+// /* RIGHT -- LEFT Arrow  */
+// .arrow{
+//   padding: 10px;
+//   cursor: pointer;
+//   text-transform: none;
+//   background-color: transparent;
+//   border: 0;
+//   overflow: visible;
+//   position: absolute;
+//   display: inline-block;
+//   top: 150px;
+//   z-index: 8;
+// }
+// .arrow-left{
+//   left: 5px;
+//   padding-right: 5px;
+// }
+// .arrow-right{
+//   right: 5px;
+//   padding-left: 5px;
+// }
+// .arrow-box{
+//   width: 30px;
+//   height: 100px;
+//   display: inline-block;
+//   position: relative;
+// }
+// .arrow-inner{
+//   display: inline-block;
+// }
+// .arrow-inner::before,
+// .arrow-inner::after{
+//   width: 40px;
+//   height: 4px;
+//   background-color: #403D7A;
+//   position: absolute;
+//   top: 50%;
+// }
+// .arrow-left-inner::before,
+// .arrow-left-inner::after{
+//   left: 0px;
+// }
+// .arrow-right-inner::before,
+// .arrow-right-inner::after{
+//   right: 0px;
+// }
+// .arrow-inner::before{
+//   transition-property: transform;
+//   transition-duration: 300ms;
+//   border-radius:100px;
+//   content:"";
+//   display: block;
+// }
+// .arrow-inner::after{
+//   transition-property: transform;
+//   transition-duration: 300ms;
+//   content:"";
+//   border-radius:100px;
+//   display: block;
+// }
+// .arrow-left-inner::after{
+//   transform: rotate(-65deg);
+//   transform-origin: left;
+// }
+// .arrow-left-inner::before{
+//   transform: rotate(65deg);
+//   transform-origin: left;
+//   top: 48%;
+// }
+// .arrow-right-inner::after{
+//   transform: rotate(-65deg);
+//   transform-origin: right;
+//   top: 48%;
+// }
+// .arrow-right-inner::before{
+//   transform: rotate(65deg);
+//   transform-origin: right;
+// }
+
+
+// .slideUp{
+// padding: 5px;
+// display: inline-block;
+// background-color:transparent;
+// border:0;
+// margin: 10px 0px;
+// }
+// .slideUp-box{
+// display: block;
+// width: 140px;
+// height: 60px;
+// }
+// .slideUp-inner::before,
+// .slideUp-inner::after{
+//   content: "";
+//   position: relative;
+//   display: inline-block;
+//   width: 65px;
+//   height: 5px;
+//   border-radius: 10px;
+//   background-color:#403D7A;
+//   top: 0%;
+// }
+// .slideUp-inner::before{
+//   transform-origin: right;
+//   transform: rotate(-30deg);
+//   right: -1px;
+// }
+// .slideUp-inner::after{
+//   transform-origin: left;
+//   transform: rotate(30deg);
+//   left: -1px;
+// }
+
+// @media (max-width:610px){
+// .arrow{
+//   top: -25px;
+// }
+// .arrow-left{
+//   left: 80px;
+// }
+// .arrow-right{
+//   right: 80px;
+// }
+// .arrow-left-inner::after{
+//   transform: rotate(-22deg);
+// }
+// .arrow-left-inner::before{
+//   transform: rotate(22deg);
+//   top: 49%;
+// }
+// .arrow-right-inner::after{
+//   transform: rotate(-22deg);
+//   top: 49%;
+// }
+// .arrow-right-inner::before{
+//   transform: rotate(22deg);
+// }
+// }
+// @media (max-width:425px){
+// .arrow{
+//   display: none;
+// }
+// }
+
 router-outlet{
-  position: absolute;
-}
-// -----
-// ARROWS
-// -----
-.arrow-down{
-  padding: 10px;
-  display: inline-block;
-  cursor: pointer;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin-right: 10px;
-  overflow: visible;
-  display: none;
-}
-
-.arrow-down-box{
-  width: 40px;
-  height: 24px;
-  display: inline-block;
   position: relative;
-}
-.arrow-down-inner{
-  display: block;
-}
-
-.arrow-down-inner::before,
-.arrow-down-inner::after{
-  width: 24px;
-  height: 4px;
-  background-color: #403D7A;
-  position: absolute;
-  top: 50%;
-}
-.arrow-down-inner::before{
-  transition-property: transform;
-  transition-duration: 300ms;
-  border-radius:50px 100px 100px 50px;
-  content:"";
-  display: block;
-  left: -0.7px;
-  transform: rotate(38deg);
-}
-.arrow-down-inner::after{
-  transition-property: transform;
-  transition-duration: 300ms;
-  content:"";
-  border-radius:100px 50px 50px 100px;
-  display: block;
-  right: -0.7px;
-  transform: rotate(-38deg);
-}
-/* active */
-.arrow-down-box.active .arrow-down-inner::before{
-  transition-property: transform;
-  transition-duration: 300ms;
-  transform: rotate(-38deg);
-}
-.arrow-down-box.active .arrow-down-inner::after{
-  transition-property: transform;
-  transition-duration: 300ms;
-  transform: rotate(38deg);
-}
-
-
-
-
-/* RIGHT -- LEFT Arrow  */
-.arrow{
-  padding: 10px;
-  cursor: pointer;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  overflow: visible;
-  position: absolute;
-  display: inline-block;
-  top: 150px;
-  z-index: 8;
-}
-.arrow-left{
-  left: 5px;
-  padding-right: 5px;
-}
-.arrow-right{
-  right: 5px;
-  padding-left: 5px;
-}
-.arrow-box{
-  width: 30px;
-  height: 100px;
-  display: inline-block;
-  position: relative;
-}
-.arrow-inner{
-  display: inline-block;
-}
-.arrow-inner::before,
-.arrow-inner::after{
-  width: 40px;
-  height: 4px;
-  background-color: #403D7A;
-  position: absolute;
-  top: 50%;
-}
-.arrow-left-inner::before,
-.arrow-left-inner::after{
-  left: 0px;
-}
-.arrow-right-inner::before,
-.arrow-right-inner::after{
-  right: 0px;
-}
-.arrow-inner::before{
-  transition-property: transform;
-  transition-duration: 300ms;
-  border-radius:100px;
-  content:"";
-  display: block;
-}
-.arrow-inner::after{
-  transition-property: transform;
-  transition-duration: 300ms;
-  content:"";
-  border-radius:100px;
-  display: block;
-}
-.arrow-left-inner::after{
-  transform: rotate(-65deg);
-  transform-origin: left;
-}
-.arrow-left-inner::before{
-  transform: rotate(65deg);
-  transform-origin: left;
-  top: 48%;
-}
-.arrow-right-inner::after{
-  transform: rotate(-65deg);
-  transform-origin: right;
-  top: 48%;
-}
-.arrow-right-inner::before{
-  transform: rotate(65deg);
-  transform-origin: right;
-}
-
-
-.slideUp{
-padding: 5px;
-display: inline-block;
-background-color:transparent;
-border:0;
-margin: 10px 0px;
-}
-.slideUp-box{
-display: block;
-width: 140px;
-height: 60px;
-}
-.slideUp-inner::before,
-.slideUp-inner::after{
-  content: "";
-  position: relative;
-  display: inline-block;
-  width: 65px;
-  height: 5px;
-  border-radius: 10px;
-  background-color:#403D7A;
-  top: 0%;
-}
-.slideUp-inner::before{
-  transform-origin: right;
-  transform: rotate(-30deg);
-  right: -1px;
-}
-.slideUp-inner::after{
-  transform-origin: left;
-  transform: rotate(30deg);
-  left: -1px;
-}
-
-@media (max-width:610px){
-.arrow{
-  top: -25px;
-}
-.arrow-left{
-  left: 80px;
-}
-.arrow-right{
-  right: 80px;
-}
-.arrow-left-inner::after{
-  transform: rotate(-22deg);
-}
-.arrow-left-inner::before{
-  transform: rotate(22deg);
-  top: 49%;
-}
-.arrow-right-inner::after{
-  transform: rotate(-22deg);
-  top: 49%;
-}
-.arrow-right-inner::before{
-  transform: rotate(22deg);
-}
-}
-@media (max-width:425px){
-.arrow{
-  display: none;
-}
 }

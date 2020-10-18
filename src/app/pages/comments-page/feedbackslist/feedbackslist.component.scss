@@ -1,5 +1,5 @@
 .comments{
-  margin-top: 200px;
+  margin: 120px 0px 100px;
   .canvas{
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 18px;
@@ -99,6 +99,9 @@
           transition-duration: 200ms;
           box-shadow: 0 0 10px rgba(179, 179, 179, 0.5);
           .titel-feedback{
+            &::first-letter{
+              text-transform: uppercase;
+            }
             grid-column: 1;
             grid-row: 1;
             font-size: 18px;
@@ -111,6 +114,9 @@
             font-size: 14px;
           }
           .text-feedback{
+            &::first-letter{
+              text-transform: uppercase;
+            }
             grid-column-start: 1;
             grid-column-end: 3;
             grid-row: 2;
