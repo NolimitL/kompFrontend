@@ -1,3 +1,4 @@
+import { FlurDirective } from 'src/app/shared/directives/flur.directive';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+
+  visible: boolean = false
+  visibleL: boolean = false
 
   constructor(private router: Router) { }
 

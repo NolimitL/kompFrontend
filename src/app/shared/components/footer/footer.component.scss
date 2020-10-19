@@ -23,6 +23,9 @@ footer {
       padding-left: 20px;
       margin-bottom: 10px;
       position: relative;
+      >h4{
+        padding: 10px 0px;
+      }
       #text-vertical{
         text-transform: uppercase;
         font-weight: 600;
@@ -55,6 +58,27 @@ footer {
             transition-duration: 200ms;
             font-size: 20px;
             color: rgba(0, 0, 0, 0.747);
+          }
+        }
+      }
+      #left-shift{
+        .text-info-plus{
+          .link-plus{
+            color: #26235f;
+          }
+          #email-link{
+            cursor: pointer;
+          }
+          color: #26235f;
+          padding: 5px;
+          white-space: nowrap;
+        }
+        #adress,
+        #adress-link{
+          &:hover{
+            #adress-link{
+              text-decoration: underline;
+            }
           }
         }
       }

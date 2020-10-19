@@ -1,3 +1,5 @@
+import { FlurDirective } from './shared/directives/flur.directive';
+import { ClipboardModule } from 'ngx-clipboard';
 import { SharedModule } from './shared/shared.module';
 import { NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -33,7 +35,8 @@ const INTERCEPTOR: Provider = {
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ClipboardModule
   ],
   providers: [INTERCEPTOR],
   bootstrap: [AppComponent]

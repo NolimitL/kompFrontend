@@ -106,6 +106,30 @@
                   <img src="src/social-media/facebook.png" alt="" width="20px" height="20px"/>
               </picture></a></li>
       </ul> -->
+      <div class="contacts block">
+        <h4>Связатся с нами:</h4>
+        <div id="left-shift">
+          <p class="text-info-plus"
+            (mouseenter)="visibleL = true"
+            (mouseleave)="visibleL = false">Тел:
+            <a class="link-plus" href="tel:+7(953)970-01-42"
+            [ngStyle]="{textDecoration: visibleL ? 'underline' : null}"
+            >+7(953)970-01-42</a>
+          </p>
+          <p id="copyText" class="text-info-plus"
+            (mouseenter)="visible = true"
+            (mouseleave)="visible = false">Email:
+            <span id="email-link" [ngStyle]="{textDecoration: visible ? 'underline' : null}"
+              ngxClipboard [cbContent]="'tom701@rambler.ru'">tom701@rambler.ru
+            </span>
+          </p>
+          <p class="text-info-plus" id="adress">
+            Адрес:
+            <a class="link-plus"  id="adress-link"
+            href="https://yandex.ru/maps/15/tula/?ll=37.611946%2C54.175169&mode=search&oid=1605727188&ol=biz&z=16" target="_blank"
+            >г. Тула   ул. Тимирязева, д.97</a></p>
+        </div>
+      </div>
   </div>
 </footer>
 <!-- Component-end footer-main -->

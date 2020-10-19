@@ -7,7 +7,7 @@ import { FBDataBase } from './response.interface';
 export const environment: FBDataBase = {
   production: false,
 //   urlAPI:'http://192.168.178.153/api'
-  urlAPI:'http://localhost:3000/api'
+  urlAPI:'http://localhost:80/api'
   // urlServiceCard:'https://kompservice-web.firebaseio.com/service-card'
 };
 
