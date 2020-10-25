@@ -3,6 +3,15 @@
   position: relative;
   .wrapper{
     margin: auto 100px;
+    @media all and (max-width: 960px){
+      margin: auto 40px;
+    }
+    @media all and (max-width: 840px){
+      margin: auto 20px;
+    }
+    @media all and (max-width: 400px){
+      margin: auto 5px;
+    }
     a:active{
       text-decoration: none;
       outline: none;
@@ -25,6 +34,17 @@
         align-items:center;
         flex-direction: column;
         transition-duration : 300ms;
+        @media all and (max-width:800px){
+          margin: 10px;
+        }
+        @media all and (max-width:750px){
+          width: 150px;
+          height: 153.75px;
+        }
+        @media all and (max-width:750px){
+          width: 180px;
+          height: 170px;
+        }
         &.hoveredOn{
           background-color: rgba(255, 255, 255, 0.6);
           &.hovered-in{
@@ -51,28 +71,23 @@
           flex-direction: column;
           justify-content: space-evenly;
           align-items:center;
+          @media all and (max-width:750px){
+            font-size: 16px;
+          }
           .images{
             max-width: 55%;
+            @media all and (max-width:750px){
+              max-width: 40%;
+            }
+            @media all and (max-width:400px){
+              max-width: 50%;
+            }
           }
           .text-in{
             padding: 0 5px;
           }
         }
       }
-    }
-  }
-
-  .triangle-left{
-    display: inline-block;
-    position: absolute;
-    top: 345px;
-    right: 40px;
-    transition-duration: 300ms;
-    &:hover{
-      transition-duration: 400ms;
-      transition-timing-function: ease-out;
-      transform: scale(0.95);
-      filter: opacity(85%);
     }
   }
 }

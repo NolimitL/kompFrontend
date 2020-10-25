@@ -41,7 +41,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       preloadingStrategy: PreloadAllModules,
       scrollPositionRestoration: "top",
-      // anchorScrolling: 'enabled', //для перехода к фрагменту
+      anchorScrolling: 'enabled', //для перехода к фрагменту
       scrollOffset: [0, 0]
     })
   ],

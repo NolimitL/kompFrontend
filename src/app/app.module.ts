@@ -1,4 +1,3 @@
-import { FlurDirective } from './shared/directives/flur.directive';
 import { ClipboardModule } from 'ngx-clipboard';
 import { SharedModule } from './shared/shared.module';
 import { NgModule, Provider } from '@angular/core';
@@ -29,7 +28,7 @@ const INTERCEPTOR: Provider = {
     MainLayoutComponent,
     FooterComponent,
     ErrorPageComponent,
-    GreetComponent,
+    GreetComponent
   ],
   imports: [
     BrowserModule,

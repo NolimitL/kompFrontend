@@ -413,6 +413,15 @@ section{
   }
   .wrapper{
     margin: auto 135px;
+    @media all and (max-width: 650px) {
+      margin: auto 80px;
+    }
+    @media all and (max-width: 650px) {
+      margin: auto 30px;
+    }
+    @media all and (max-width: 500px) {
+      margin: auto 10px;
+    }
   }
 }
 ::-webkit-scrollbar{

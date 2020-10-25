@@ -39,3 +39,6 @@ export interface CommentsList{
   text:string
   phone:string
 }
+export interface PhonePermit{
+  permit: boolean
+}

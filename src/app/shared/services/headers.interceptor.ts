@@ -8,7 +8,7 @@ export class HeadersInterceptor implements HttpInterceptor{
    //  const cloned = req.clone({
    //    // headers: req.headers.append('Origin','http:/localhost:4200')
    //  })
-    console.log('Interceptor:', req);
+    console.log('Interceptor must added:');
     return next.handle(req)
   }
 

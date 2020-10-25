@@ -1,35 +1,37 @@
-<header>
-  <div class="top-line" id="start">
+<header [ngClass]="{smallto: decreased}">
+  <div class="top-line" id="start" [ngClass]="{smaller: decreased}">
       <a id="link-logo" routerLink="/home"><img class="logotype" src="assets/img/logo-komp.svg" alt="logo-komp"></a>
       <nav class="header_nav">
           <ul>
               <li><a (click)="toAnchor('services')">Услуги</a></li>
               <li><a (click)="toAnchor('contacts')">Контакты</a></li>
-              <li><a [routerLink]="['/comments']">Отзывы</a></li>
-              <li><a [routerLink]="['/about']">О нас</a></li>
+              <li><a [routerLink]="['/comments']" routerLinkActive="linkactive">Отзывы</a></li>
+              <li><a [routerLink]="['/about']" routerLinkActive="linkactive">О нас</a></li>
           </ul>
       </nav>
-      <button class="hamburger hamburger--spin" type="button" >
-          <span class="hamburger-box">
+      <button (click)="toggle = !toggle"
+        [ngClass]="{active: toggle}"
+      class="hamburger hamburger--spin" type="button" >
+      <span class="hamburger-box">
               <span class="hamburger-inner"></span>
           </span>
       </button>
   </div>
 
-  <div class="plate">
-      <ul class="slideMenu">
-          <li><a id="">Услуги</a></li>
-          <li><a href="" id="goto_contacts">Контакты</a></li>
-          <li><a href="" id="goto_commits">Отзывы</a></li>
-          <li><a href="">О нас</a></li>
-          <li>
-              <button class="slideUp" type="button">
-                  <span class="slideUp-box">
-                      <span class="slideUp-inner"></span>
-                  </span>
-              </button>
-          </li>
-      </ul>
+  <div class="plate"
+  [@stand]
+  *ngIf="toggle">
+    <ul class="slideMenu">
+        <li><a (click)="toAnchor('services'); toggle = !toggle">Услуги</a></li>
+        <li><a (click)="toAnchor('contacts'); toggle = !toggle">Контакты</a></li>
+        <li><a [routerLink]="['/comments']" (click)="toggle = !toggle">Отзывы</a></li>
+        <li><a [routerLink]="['/about']" (click)="toggle = !toggle">О нас</a></li>
+        <li>
+          <div class="up-block" (click)="toggle = !toggle">
+            <button class="slideUp" type="button"></button>
+          </div>
+        </li>
+    </ul>
   </div>
 </header>
 

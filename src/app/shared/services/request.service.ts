@@ -45,4 +45,7 @@ export class RequestService{
     return this.http.get<ServiceInfo[]>(`${environment.urlAPI}/extra/service-info`)
   }
 
+  // allowedPhone(phone): Observable<any>{
+  //   return this.http.post(`${environment.urlAPI}/extra/restrictedphones`, phone)
+  // }
 }

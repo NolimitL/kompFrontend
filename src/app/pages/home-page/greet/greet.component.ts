@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GreetComponent implements OnInit {
 
-  triangle = 'assets/img/triangle.svg'
-
   constructor(private router: Router) { }
 
   ngOnInit(): void {

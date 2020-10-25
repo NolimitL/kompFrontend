@@ -23,17 +23,33 @@
       display: flex;
       justify-content: center;
       align-items:baseline;
+      @media all and (max-width: 900px){
+        margin: 0px 20px;
+      }
+      @media all and (max-width: 800px){
+        font-size: 16px;
+      }
+      @media all and (max-width: 720px){
+        flex-flow: column nowrap;
+        align-items: center;
+      }
+      @media all and (max-width: 400px){
+        font-size: 14px;
+      }
       .adress,
       .worktime{
         flex-basis: 50%;
+        @media all and (max-width: 720px){
+          margin-bottom: 10px;
+        }
+        h3{
+          text-transform: uppercase;
+        }
       }
       .worktime .timetable{
         font-weight: 600;
       }
       .adress{
-        h3{
-          text-transform: uppercase;
-        }
         a{
           font-size: calc(100% + 1px);
           text-decoration: underline;
