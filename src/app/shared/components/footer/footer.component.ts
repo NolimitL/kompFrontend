@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  visible: boolean = false
-  visibleL: boolean = false
+  toggle1 = false
+  toggle2 = false
 
   constructor(private router: Router) { }
 
@@ -29,5 +29,16 @@ export class FooterComponent implements OnInit {
       this.router.navigate(['/home'], {fragment:anchor})
     }
   }
-
+  changed(){
+    if (!this.toggle1) {
+      this.toggle1 = true
+    } else {
+      this.toggle1 = false
+    }
+    if (!this.toggle2) {
+      this.toggle2 = true
+    } else{
+      this.toggle2 = false
+    }
+  }
 }

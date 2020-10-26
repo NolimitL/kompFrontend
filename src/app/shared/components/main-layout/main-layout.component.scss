@@ -41,6 +41,7 @@ header{
     @media all and (max-width: 970px){
     }
     > a{
+      transition-duration: 200ms;
       margin: 0px 50px 0px 100px;
       @media all and (max-width: 900px){
         margin: 0px 25px 0px 50px;
@@ -49,7 +50,7 @@ header{
         }
       }
       .logotype{
-        transition-duration: 200ms;
+        transition-duration: 500ms;
         max-width: 140px;
         @media all and (max-width: 840px){
           max-width: 100px;
@@ -60,6 +61,7 @@ header{
       transition-duration: 200ms;
       margin-right: 15px;
       @media all and (max-width: 900px){
+        transition-duration: 200ms;
         margin-right: 15px;
       }
       @media all and (max-width: 600px){
@@ -222,6 +224,7 @@ header{
           display: block;
           position: absolute;
           border: none;
+          background-color: transparent;
           top: 50%;
           right: 43%;
           &::before,

@@ -2,10 +2,19 @@ footer {
   .canvas{
     display: flex;
     flex-flow: row nowrap;
-    padding: 10px 100px   0px;
+    padding: 10px 100px 0px;
     font-family: "IBM Plex Sans", sans-serif;
     line-height: 20px;
     letter-spacing: 0.1em;
+    @media all and (max-width:980px){
+      padding: 10px 50px 0px;
+    }
+    @media all and (max-width:820px){
+      padding: 10px 10px 0px;
+    }
+    @media all and (max-width:600px){
+      flex-flow: column nowrap;
+    }
     .actived_slideDown li{
       font-size: 20px;
       margin: 10px 0px;
@@ -23,19 +32,14 @@ footer {
       padding-left: 20px;
       margin-bottom: 10px;
       position: relative;
+      @media all and (max-width:600px){
+        padding-left: 10px;
+      }
+      &.contacts{
+        align-self: center;
+      }
       >h4{
         padding: 10px 0px;
-      }
-      #text-vertical{
-        text-transform: uppercase;
-        font-weight: 600;
-
-        position: absolute;
-        top: 40px;
-        left: -120px;
-        white-space: nowrap;
-        transform-origin: right;
-        transform: rotate(-90deg);
       }
       .links{
         font-family: 'IBM Plex Sans', sans-serif;
@@ -47,7 +51,7 @@ footer {
           cursor: pointer;
           color: #26235f;
           transition-duration: 200ms;
-          margin: 5px 0px;
+          margin: 10px 0px;
           a{
             color: #26235f;
             &:hover{
@@ -65,13 +69,22 @@ footer {
         .text-info-plus{
           .link-plus{
             color: #26235f;
+            &:hover{
+              text-decoration: underline;
+            }
           }
           #email-link{
             cursor: pointer;
+            &:hover{
+              text-decoration: underline;
+            }
           }
           color: #26235f;
           padding: 5px;
           white-space: nowrap;
+          @media all and (max-width:900px){
+            white-space: normal;
+          }
         }
         #adress,
         #adress-link{
@@ -82,15 +95,70 @@ footer {
           }
         }
       }
+      .up-block{
+        display: none;
+        @media all and (max-width:600px){
+          display: block;
+        }
+        width: 80px;
+        height: 30px;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+        .slideUp{
+          display: block;
+          position: absolute;
+          border: none;
+          background-color: transparent;
+          top: 50%;
+          right: 43%;
+          &::before,
+          &::after{
+            content: '';
+            position: absolute;
+            top: 0px;
+            width: 35px;
+            height: 5px;
+            border-radius: 15px;
+            border: none;
+            background-color: #403D7A;
+            transform-origin: center;
+            transition-duration: 200ms;
+          }
+          &::after{
+            right: 2px;
+            transform: rotate(30deg);
+          }
+          &::before{
+            left: 2px;
+            transform: rotate(-30deg);
+          }
+          &.rotated{
+            &::after{
+              transform: rotate(-30deg);
+            }
+            &::before{
+              transform: rotate(30deg);
+            }
+          }
+        }
+      }
     }
     .column-name{
       font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       line-height: 20px;
       letter-spacing: 0.1em;
       color:rgba(0, 0, 0, 0.8);
       padding: 10px 0px;
+      @media all and (max-width:720px){
+        font-size: 16px;
+      }
+      @media all and (max-width:600px){
+        font-size: 20px;
+      }
     }
   }
   .links-to-company-view.links.actived_slideDown,
@@ -112,6 +180,9 @@ footer.footer-2 {
     display: flex;
     justify-content: space-between;
     align-items:center;
+    @media all and (max-width:720px){
+      padding: 15px 20px;
+    }
     .rules{
       display: flex;
       flex-flow: column nowrap;

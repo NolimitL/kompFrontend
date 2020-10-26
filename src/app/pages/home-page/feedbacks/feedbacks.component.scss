@@ -7,13 +7,16 @@
     letter-spacing: 0.1em;
     margin: 80px 0px;
     padding-top: 15px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content:space-between;
     align-items: center;
     position: relative;
+    @media all and (max-width:400px){
+      padding: 10px 0px 20px 0px;
+    }
     h2{
       font-size: 24px;
       text-align: center;
@@ -25,10 +28,16 @@
     .block{
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: baseline;
+      // align-items: baseline;
       justify-content: center;
       padding: 15px 0px 0px;
       max-width: calc(100% - 100px);
+      @media all and (max-width:720px){
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        max-width: calc(100% - 20px);
+      }
       .comment{
          line-height: 1.5rem;
          background-color:rgba(247, 247, 247, 0.97);
@@ -42,17 +51,23 @@
          transition-duration: 200ms;
          box-shadow: 0 0 10px rgba(179, 179, 179, 0.5);
         #date{
-           grid-column: 2;
-           grid-row: span 1;
-           font-size: 14px;
-           font-weight: 300;
-           letter-spacing: normal;
-           justify-self: right;
+          grid-column: 2;
+          grid-row: span 1;
+          font-size: 14px;
+          font-weight: 300;
+          letter-spacing: normal;
+          justify-self: right;
+          @media all and (max-width:400px){
+            font-size: 13px;
+          }
         }
         #Name-user{
           grid-column: 1;
           grid-row: span 1;
           text-align: start;
+          @media all and (max-width:400px){
+            font-size: 14px;
+          }
         }
         #text-user{
           grid-row: 2;
@@ -67,6 +82,9 @@
           max-width: 100%;
           max-height: calc(180px - 1.85rem);
           overflow: auto;
+          @media all and (max-width:400px){
+            font-size: 15px;
+          }
         }
       }
       button.btn:hover{
@@ -78,15 +96,28 @@
         justify-self: right;
         margin-right: 10px;
         transition-duration: 200ms;
-
+        @media all and (max-width:720px){
+          margin-right: 0px;
+          margin-bottom: 10px;
+          justify-self: center;
+          max-width: 300px;
+          align-self: center;
+        }
         &.r{
           justify-self: left;
           margin-left: 10px;
+          @media all and (max-width:720px){
+            margin-left: 0px;
+            justify-self: center;
+          }
         }
         cursor: pointer;
         h4{
           font-size: 15px;
           text-transform: uppercase;
+          @media all and (max-width:400px){
+            font-size: 12px;
+          }
         }
       }
     }

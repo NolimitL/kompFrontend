@@ -22,11 +22,9 @@
       </ul> -->
       <div class="menu-website block" id="AR_2">
           <h3 class="column-name">Карта сайта</h3>
-          <button class="arrow-down" type="menu">
-              <span class="arrow-down-box">
-                  <span class="arrow-down-inner"></span>
-              </span>
-          </button>
+          <div class="up-block" (click)="changed()">
+            <button class="slideUp" type="button" [class.rotated]="toggle1"></button>
+          </div>
           <ul class="menu-site links">
               <li><a (click)="toAnchor('welcome-start')" class="goto">Главная</a></li>
               <li><a (click)="toAnchor('services')" class="goto">Услуги и цены</a></li>
@@ -44,13 +42,10 @@
       </ul> -->
       <div class="social-links block" id="AR_3">
           <h3 class="column-name">Мы в соц. сетях</h3>
-          <h4 id="text-vertical">НАПИШИ НАМ</h4>
-          <button class="arrow-down" type="menu">
-              <span class="arrow-down-box">
-                  <span class="arrow-down-inner"></span>
-              </span>
-          </button>
-          <ul class="links-to-SM links">
+          <div class="up-block" (click)="changed()">
+            <button class="slideUp" type="button" [ngClass]="{rotated:toggle2}"></button>
+          </div>
+          <ul class="links-to-SM links" [class.slideDownList]="toggle2">
               <li class="goto"><a href="https://wa.me/79109457564?text=Здравствуйте!+Я+по+поводу+" target="_blanck">
                   <picture>
                       <source srcset="assets/img/social-media/whatsapp.webp" type="image/webp">
@@ -109,17 +104,11 @@
       <div class="contacts block">
         <h4>Связатся с нами:</h4>
         <div id="left-shift">
-          <p class="text-info-plus"
-            (mouseenter)="visibleL = true"
-            (mouseleave)="visibleL = false">Тел:
-            <a class="link-plus" href="tel:+7(953)970-01-42"
-            [ngStyle]="{textDecoration: visibleL ? 'underline' : null}"
-            >+7(953)970-01-42</a>
+          <p class="text-info-plus">Тел:
+            <a class="link-plus" href="tel:+7(953)970-01-42">+7(953)970-01-42</a>
           </p>
-          <p id="copyText" class="text-info-plus"
-            (mouseenter)="visible = true"
-            (mouseleave)="visible = false">Email:
-            <span id="email-link" [ngStyle]="{textDecoration: visible ? 'underline' : null}"
+          <p id="copyText" class="text-info-plus">Email:
+            <span id="email-link"
               ngxClipboard [cbContent]="'tom701@rambler.ru'">tom701@rambler.ru
             </span>
           </p>
