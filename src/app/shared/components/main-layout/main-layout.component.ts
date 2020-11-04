@@ -1,8 +1,7 @@
-import { ElementRef, HostListener} from '@angular/core';
+import { HostListener } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { ViewportScroller } from '@angular/common';
-import { Component, OnInit, ViewChild} from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-layout',
@@ -62,4 +61,7 @@ export class MainLayoutComponent implements OnInit {
     }
   }
 
+  stopedScrolling(){
+    document.querySelector("body").classList.toggle('lock')
+  }
 }

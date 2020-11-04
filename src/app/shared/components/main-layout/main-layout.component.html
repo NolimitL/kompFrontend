@@ -9,7 +9,7 @@
               <li><a [routerLink]="['/about']" routerLinkActive="linkactive">О нас</a></li>
           </ul>
       </nav>
-      <button (click)="toggle = !toggle"
+      <button (click)="toggle = !toggle; stopedScrolling()"
         [ngClass]="{active: toggle}"
       class="hamburger hamburger--spin" type="button" >
       <span class="hamburger-box">
@@ -18,8 +18,7 @@
       </button>
   </div>
 
-  <div class="plate"
-  [@stand]
+  <div class="plate" [@stand]
   *ngIf="toggle">
     <ul class="slideMenu">
         <li><a (click)="toAnchor('services'); toggle = !toggle">Услуги</a></li>

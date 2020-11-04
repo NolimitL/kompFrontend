@@ -32,8 +32,10 @@ footer {
       padding-left: 20px;
       margin-bottom: 10px;
       position: relative;
+      transition-duration: 400ms;
       @media all and (max-width:600px){
         padding-left: 10px;
+
       }
       &.contacts{
         align-self: center;
@@ -118,7 +120,7 @@ footer {
             content: '';
             position: absolute;
             top: 0px;
-            width: 35px;
+            width: 30px;
             height: 5px;
             border-radius: 15px;
             border: none;

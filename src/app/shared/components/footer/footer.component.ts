@@ -1,20 +1,50 @@
-import { FlurDirective } from 'src/app/shared/directives/flur.directive';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
+  animations:[
+    trigger( 'slide', [
+      transition(':enter', [
+        style({
+          transformOrigin:'top',
+          transform:'rotateX(-90deg)'
+        }),
+        animate(400, style({
+          transformOrigin:'top',
+          transform:'rotateX(0deg)'
+        }))
+      ]),
+      transition(':leave', [
+        style({
+          transformOrigin:'top',
+          transform:'rotateX(0deg)'
+        }),
+        animate(400, style({
+          transformOrigin:'top',
+          transform:'rotateX(-90deg)'
+        }))
+      ])
+    ])
+  ]
 })
 export class FooterComponent implements OnInit {
 
-  toggle1 = false
-  toggle2 = false
+  toggle1 = true
+  toggle2 = true
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    window.addEventListener('resize', () => {
+      console.log('resize');
+      if (window.innerWidth <= 600) {
+
+      }
+    })
   }
 
   toAnchor(anchor){
@@ -29,16 +59,27 @@ export class FooterComponent implements OnInit {
       this.router.navigate(['/home'], {fragment:anchor})
     }
   }
-  changed(){
-    if (!this.toggle1) {
-      this.toggle1 = true
-    } else {
-      this.toggle1 = false
+
+  changed(id:number){
+    if (id === 1) {
+      if (this.toggle1) {
+        this.toggle1 = false
+        this.toggle2 = true
+      }else{
+        this.toggle1 = true
+        this.toggle2 = true
+      }
     }
-    if (!this.toggle2) {
-      this.toggle2 = true
-    } else{
-      this.toggle2 = false
+    if (id === 2) {
+      if (this.toggle2) {
+        this.toggle1 = true
+        this.toggle2 = false
+      }else{
+        this.toggle1 = true
+        this.toggle2 = true
+      }
     }
   }
+
+
 }
