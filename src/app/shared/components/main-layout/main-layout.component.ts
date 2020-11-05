@@ -63,5 +63,6 @@ export class MainLayoutComponent implements OnInit {
 
   stopedScrolling(){
     document.querySelector("body").classList.toggle('lock')
+    this.toggle = !this.toggle
   }
 }

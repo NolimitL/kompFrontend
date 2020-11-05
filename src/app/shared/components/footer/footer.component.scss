@@ -35,10 +35,9 @@ footer {
       transition-duration: 400ms;
       @media all and (max-width:600px){
         padding-left: 10px;
-
-      }
-      &.contacts{
-        align-self: center;
+        &.contacts{
+          align-self: center;
+        }
       }
       >h4{
         padding: 10px 0px;

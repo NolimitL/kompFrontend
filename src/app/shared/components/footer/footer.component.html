@@ -6,7 +6,7 @@
             <button class="slideUp" type="button" [class.rotated]="toggle1"></button>
           </div>
           <ul class="menu-site links" [@slide] #list1
-            *ngIf="!toggle1">
+            *ngIf="!toggle1 || bigger">
               <li><a (click)="toAnchor('welcome-start')" class="goto">Главная</a></li>
               <li><a (click)="toAnchor('services')" class="goto">Услуги и цены</a></li>
               <li><a routerLink="/comments" class="goto">Отзывы</a></li>
@@ -19,8 +19,8 @@
           <div class="up-block" (click)="changed(2)">
             <button class="slideUp" type="button" [class.rotated]="toggle2"></button>
           </div>
-          <ul class="links-to-SM links" [@slide]
-            *ngIf="!toggle2" #list2>
+          <ul class="links-to-SM links" [@slide] #list2
+            *ngIf="!toggle2 || bigger" >
               <li class="goto"><a href="https://wa.me/79109457564?text=Здравствуйте!+Я+по+поводу+" target="_blanck">
                   <picture>
                       <source srcset="assets/img/social-media/whatsapp.webp" type="image/webp">

@@ -2,9 +2,14 @@
   margin: 120px 0px 100px;
   display: grid;
   grid-template-columns: 10px 6fr 2fr 10px;
-  grid-template-rows: 30px 450px 30px;
+  grid-template-rows: 30px 1fr 30px;
   column-gap: 2%;
   color: #403D7A;
+  @media all and (max-width:650px){
+    grid-template-columns: 10px 1fr 10px;
+    row-gap: 10px;
+    padding-top: 5px;
+  }
   .information{
     grid-column: 2;
     grid-row: 2;
@@ -12,14 +17,14 @@
     border-radius: 5px;
     padding: 1% 2%;
     position: relative;
+    min-height: 100%;
+    @media all and (max-width:650px){
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
     .heading{
       font-size: 1.45rem;
       margin: 0px 0px 10px;
-    }
-    h4{
-      font-size: 18px;
-      font-weight: 600;
-      margin: 0px 0px 5px;
     }
     #text-before,
     #text-after{
@@ -50,15 +55,65 @@
       letter-spacing: 0.05rem;
       word-spacing: 0.2rem;
       line-height: 1.15rem;
-      margin: 10px 0px 0px;
+      margin: 30px 0px 0px;
+    }
+  }
+  .up-block{
+    display: none;
+    @media all and (max-width:650px){
+      display: block;
+      grid-column: 2;
+      grid-row: 1;
+    }
+    width: 80px;
+    height: 30px;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+    .slideUp{
+      display: block;
       position: absolute;
-      bottom: 7%;
-      width: 96%;
+      border: none;
+      background-color: transparent;
+      top: 50%;
+      right: 42%;
+      &::before,
+      &::after{
+        content: '';
+        position: absolute;
+        top: 0px;
+        width: 40px;
+        height: 5px;
+        border-radius: 15px;
+        border: none;
+        background-color: #403D7A;
+        transform-origin: center;
+        transition-duration: 200ms;
+      }
+      &::after{
+        right: 3px;
+        transform: rotate(20deg);
+      }
+      &::before{
+        left: 3px;
+        transform: rotate(-20deg);
+      }
+      &.rotated{
+        &::after{
+          transform: rotate(-20deg);
+        }
+        &::before{
+          transform: rotate(20deg);
+        }
+      }
     }
   }
   .sidebar{
     grid-column: 3;
     grid-row: 2;
+    @media all and (max-width:650px){
+      grid-column: 2;
+    }
     ul{
       height: 100%;
       display: flex;
@@ -66,6 +121,7 @@
       justify-content: space-between;
       li{
         cursor: pointer;
+        margin: 5px 0px;
         h3{
           transition-duration: 300ms;
           background-color: rgba(251, 251, 251, 0.97);
@@ -74,6 +130,11 @@
           color: #403D7A;
           &:hover{
             transform: translateX(-5px);
+          }
+          @media all and (max-width:650px){
+            &:hover{
+              transform:none;
+            }
           }
         }
       }

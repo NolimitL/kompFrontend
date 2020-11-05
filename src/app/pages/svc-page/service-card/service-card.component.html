@@ -1,9 +1,8 @@
 <section>
   <div class="canvas">
-    <div class="information" *ngIf="serviceShowedComponent;
-      else loading">
+    <div class="information"
+    *ngIf="serviceShowedComponent && (toggle || (!small || big) );" [@slideUp]>
       <h3 class="heading">{{serviceShowedComponent.title}}</h3>
-      <!-- <h4>Услуги и ремонт:</h4> -->
       <p id="text-before">{{serviceShowedComponent.main.text}}</p>
       <ul id="list-work">
         <li class="items" *ngFor="let item of serviceShowedComponent.main.types">
@@ -16,13 +15,18 @@
     <ng-template #loading>
       <div class="information">Загрузка данных о сервисе...</div>
     </ng-template>
-
-    <aside class="sidebar">
+    <div class="up-block" (click)="toggle = !toggle">
+      <button class="slideUp" type="button" [class.rotated]="!toggle"></button>
+    </div>
+    <aside class="sidebar" [@slide]
+    *ngIf="!toggle || (small || big)">
       <ul>
         <li
           *ngFor="let card of asideListCard"
           [routerLink]="['/services', card.name]"
-          class="slip" id="{{card.name}}">
+          class="slip" id="{{card.name}}"
+          (click)="toggle = !toggle"
+          >
           <h3  [ngStyle]="{
             backgroundColor: card.name == paramsName ? '#403D7A' : 'rgba(251, 251, 251, 0.97)',
             color: card.name == paramsName ? 'rgba(251, 251, 251, 0.97)': '#403D7A'

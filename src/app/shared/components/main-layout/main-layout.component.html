@@ -9,7 +9,7 @@
               <li><a [routerLink]="['/about']" routerLinkActive="linkactive">О нас</a></li>
           </ul>
       </nav>
-      <button (click)="toggle = !toggle; stopedScrolling()"
+      <button (click)="stopedScrolling()"
         [ngClass]="{active: toggle}"
       class="hamburger hamburger--spin" type="button" >
       <span class="hamburger-box">
@@ -21,12 +21,12 @@
   <div class="plate" [@stand]
   *ngIf="toggle">
     <ul class="slideMenu">
-        <li><a (click)="toAnchor('services'); toggle = !toggle">Услуги</a></li>
-        <li><a (click)="toAnchor('contacts'); toggle = !toggle">Контакты</a></li>
-        <li><a [routerLink]="['/comments']" (click)="toggle = !toggle">Отзывы</a></li>
-        <li><a [routerLink]="['/about']" (click)="toggle = !toggle">О нас</a></li>
+        <li><a (click)="toAnchor('services'); stopedScrolling()">Услуги</a></li>
+        <li><a (click)="toAnchor('contacts'); stopedScrolling()">Контакты</a></li>
+        <li><a [routerLink]="['/comments']" (click)="stopedScrolling()">Отзывы</a></li>
+        <li><a [routerLink]="['/about']" (click)="stopedScrolling()">О нас</a></li>
         <li>
-          <div class="up-block" (click)="toggle = !toggle">
+          <div class="up-block" (click)="stopedScrolling()">
             <button class="slideUp" type="button"></button>
           </div>
         </li>

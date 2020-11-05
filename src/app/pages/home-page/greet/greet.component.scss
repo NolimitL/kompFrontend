@@ -1,4 +1,5 @@
   .beginn{
+    padding: 300px 0px 320px;
     @media all and (max-height: 950px) {
       padding: 200px 0px 240px;
     }
@@ -46,6 +47,9 @@
       margin: 90px 0px 75px;
       max-width: 700px;
       min-height: 40px;
+      @media all and (min-height: 900px) {
+        margin: 100px 0px 95px;
+      }
       @media all and (max-width: 500px) {
         font-size: 22px;
       }

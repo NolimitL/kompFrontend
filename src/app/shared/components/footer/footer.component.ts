@@ -1,5 +1,6 @@
+import { ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -35,16 +36,24 @@ export class FooterComponent implements OnInit {
 
   toggle1 = true
   toggle2 = true
+  bigger = true
 
-  constructor(private router: Router) { }
+  @ViewChild('list1') list1: ElementRef
 
-  ngOnInit(): void {
+  constructor(private router: Router) {
     window.addEventListener('resize', () => {
-      console.log('resize');
       if (window.innerWidth <= 600) {
-
+        this.bigger = false
+      }else if(window.innerWidth > 600){
+        this.bigger = true
       }
     })
+    if (window.innerWidth <= 600) {
+      this.bigger = false
+    }
+  }
+
+  ngOnInit(): void {
   }
 
   toAnchor(anchor){
