@@ -3,7 +3,7 @@
       <div class="menu-website block" id="AR_2">
           <h3 class="column-name">Карта сайта</h3>
           <div class="up-block" (click)="changed(1)">
-            <button class="slideUp" type="button" [class.rotated]="toggle1"></button>
+            <button class="slideUp" type="button" [class.rotated]="!toggle1"></button>
           </div>
           <ul class="menu-site links" [@slide] #list1
             *ngIf="!toggle1 || bigger">
@@ -17,7 +17,7 @@
       <div class="social-links block" id="AR_3">
           <h3 class="column-name">Мы в соц. сетях</h3>
           <div class="up-block" (click)="changed(2)">
-            <button class="slideUp" type="button" [class.rotated]="toggle2"></button>
+            <button class="slideUp" type="button" [class.rotated]="!toggle2"></button>
           </div>
           <ul class="links-to-SM links" [@slide] #list2
             *ngIf="!toggle2 || bigger" >

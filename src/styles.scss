@@ -371,8 +371,8 @@ textarea {
 
 //!!! no-reset styles
 body{
+  // background-color:#f7f7cb;
   background-image: url("../src/assets/img/servers-image-web-back.png");
-  // background-color: rgb(104, 104, 105);
   background-attachment: fixed;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -404,6 +404,9 @@ section{
       border-radius: 15px;
       border: none;
       padding: 10px 10px;
+    }
+    h2{
+      font-family: 'Source Sans Pro', sans-serif;
     }
     h3{
       font-family: 'Source Sans Pro', sans-serif;

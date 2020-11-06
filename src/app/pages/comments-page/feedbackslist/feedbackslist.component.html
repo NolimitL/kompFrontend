@@ -1,12 +1,16 @@
 <section class="comments">
   <div class="canvas" id="commits">
     <div class="bar-top">
-      <button class="btn arrow" routerLink="/">Главная</button>
-      <button class="btn" routerLink="add-feedback">Написать отзыв</button>
-      <button class="btn" (click)="pipeFilter = ''">Все отзывы</button>
+      <button class="btn arrow" id="back" routerLink="/">Главная</button>
+      <button class="btn" id="feedback" routerLink="add-feedback">Написать отзыв</button>
+      <button class="btn" id="all" (click)="pipeFilter = ''; toggle ? toggle = !toggle : toggle">Все отзывы</button>
     </div>
-    <h2>Отзывы клиентов о: </h2>
-    <div class="list-block">
+    <h2>отзывы о:</h2>
+    <div class="up-block" (click)="toggle = !toggle">
+      <button class="slideUp" type="button" [class.rotated]="toggle"></button>
+    </div>
+    <div class="list-block" [@slideUp]
+    *ngIf="!toggle || big">
       <ul id="list-feedback">
         <li
         *ngFor="let comment of comments | sort:pipeFilter" class="feedback">
@@ -17,11 +21,12 @@
       </ul>
     </div>
 
-    <aside>
+    <aside [@slide]
+    *ngIf="toggle || big">
       <ul id="list">
         <li *ngFor="let item of asideList; let i=index" class="list-aside">
           <h3 class="title-list" id="{{i+1}}"
-          (click)="pipeFilter = item.name"
+          (click)="pipeFilter = item.name; toggle = !toggle"
           [ngStyle]="{
             backgroundColor: item.name == pipeFilter ? '#403D7A' : 'rgba(251, 251, 251, 0.97)',
             color: item.name == pipeFilter ? 'rgba(251, 251, 251, 0.97)': '#403D7A'
@@ -30,7 +35,7 @@
         </li>
         <li class="list-aside">
           <h3 class="title-list"
-          (click)="pipeFilter = 'other'"
+          (click)="pipeFilter = 'other'; toggle = !toggle"
           [ngStyle]="{
             backgroundColor: pipeFilter == 'other' ? '#403D7A' : 'rgba(251, 251, 251, 0.97)',
             color: pipeFilter == 'other' ? 'rgba(251, 251, 251, 0.97)': '#403D7A',
